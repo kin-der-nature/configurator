@@ -1,0 +1,71 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;        
+}
+#canvas
+{
+    width: 70%;
+}
+.row
+{
+    margin-right: 0;
+}
+.configurator-section
+{
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+.configurator_model_block
+{
+    height: 450px !important;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+}
+.configurator_model_card
+{
+    width: 200px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.658);
+    text-align: left;
+}
+.configurator_controllers
+{
+    width: 30%;
+}
+.configurator-card
+{
+    width: 200px;
+}
+.configurator-link
+{
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+}
+.configurator-icons
+{
+    color: rgb(0, 137, 145);
+}
+.configurator-link:hover
+{
+    color: rgb(0, 137, 145);
+}
+.configurator-button-list
+{
+    height: 50px;
+    padding: 30px;
+    color: #666666;
+    font-weight: bold;
+    margin-left: 5px;
+    background: #edf0f3;
+}
+.configurator-modal
+{
+    
+}
