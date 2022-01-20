@@ -24,7 +24,8 @@
             <button type="button" class="btn configurator-button-list d-flex align-items-center justify-content-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal" 
                     id="btn-sania" disabled data-bs-toggle="button" autocomplete="off">ЗАВЕРШИТЬ СПЕЦИФИКАЦИЮ</button>
-        <button class="btn configurator-button-list d-flex align-items-center justify-content-center mt-2" onclick="rotete_test()">Развернуть</button>            
+        <button class="btn configurator-button-list d-flex align-items-center justify-content-center mt-2" onclick="rotete_test()">Развернуть</button>
+        <button type="button" class="btn btn-primary" onclick="rotateObject()">Развернуть модель</button>        
         </section>
         
     </section>
@@ -42,13 +43,14 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" onclick="createPdfconfigurator()">Отправить конфигурацию</button>
+             
             </div>
           </div>
         </div>
       </div>
     <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/OBJLoader.js'></script>
+    <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/GLTFLoader.js'></script>
     <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/MTLLoader.js'></script>
     <script src='https://unpkg.com/three@0.99.0/examples/js/controls/OrbitControls.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/pdfmake.min.js"></script>
