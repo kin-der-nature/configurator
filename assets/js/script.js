@@ -13,7 +13,7 @@ const records = {
       dataUrl: '',
       id:2,
       materialName: 'materials.mtl',
-      // errorRate:{x:-0.0488,y:-0.023,z:-0.007},
+      errorRate:{x:25,y:-53.5,z:56},
       connector_type: 3
     },
     {
@@ -63,7 +63,7 @@ const records = {
           name: 'front_left',
           scale: {x: 90, y: 40, z:100},
           position: {x:-75, y:0, z: -150},
-          errorRate: {x: -12, y: -17, z: 0},
+          errorRate: {x: -12, y: -18, z: -110},
           connector_type: 2
         },
         // {
@@ -81,7 +81,7 @@ const records = {
           name: 'front_right',
           scale: {x: 90, y: 40, z:100},
           position: {x:-170, y:0, z: -150},
-          errorRate: {x: -12, y: -17, z: 0},
+          errorRate: {x: -12, y: -18, z: -110},
           connector_type: 2
         }
       ]
@@ -95,7 +95,7 @@ const records = {
       articule:'Артикул 3',
       dataUrl: '',
       id: 3,
-      errorRate:{x:0,y:0,z:0},
+      errorRate:{x:25,y:-53.5,z:56},
       connector_type: 1,
     },
     {
@@ -107,7 +107,7 @@ const records = {
       articule:'Артикул 3',
       dataUrl: '',
       id: 4,
-      errorRate:{x:0,y:0,z:0},
+      errorRate:{x:73,y:-29.2,z:62},
       connector_type: 1,
     },
     {
@@ -142,6 +142,8 @@ let mainObjectData;
 let mainObjectCenter;
 let model_decriptions_info;
 let replaceId;
+let filledPorts = [];
+let clearPorts  =[]
 const scene = new THREE.Scene();
 const canvas = document.querySelector('#canvas');
 const camera = new THREE.PerspectiveCamera( 100, canvas.width / canvas.height, 10, 1000);
@@ -407,9 +409,9 @@ function main() {
       object.scene.children[0].children[0].position.copy(position);
 
       configurator.push(objectData);
-     
+      
       configurator_table.append(modal_configurator(objectData.id,objectData.uuid,objectData.title,objectData.articule,objectData.text,objectData.image));
-  
+    
       toDataURL('assets/images/'+objectData.image, function(dataUrl) {
        
         configurator_list.push([objectData.id,objectData.uuid,objectData.title,objectData.articule,objectData.text,{
@@ -439,22 +441,23 @@ function main() {
           object.scene.children[0].children[0].rotation.y= (3.14 / 2) * 2;
         }
         
-        
         object.userData.connectorId = currentConnector.object.userData.id;
-        console.log('object data',object)
+        object.userData.errorRate =objectData.errorRate;
+        console.log('object data',objectData)
           // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
-        // object.scene.children[0].children[0].position.add(getCenterPointX(object.scene, object.userData.errorRate));
+        object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
         object.userData.id = objectData.id;
+      
         
         // object.userData.uuid = objectData.uuid;
         console.log('object.userData.uuid',objectData.uuid)
         //Заполнение id в userData для модуля
        
-        
+        filledPorts.push(object.userData.connectorId);
         if(currentConnector) {
           console.log('object.scene.children[0].children[0].position ',object.scene.children[0].children[0].position);
           
-          // object.scene.position.add(getCenterPointX(object.scene, currentConnector.object.userData.errorRate));
+          object.scene.position.add(currentConnector.object.userData.errorRate);
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           currentConnector = {object:null};
         }
@@ -497,7 +500,7 @@ function main() {
 function getCenterPointX(mesh, errorRate) {
 
   // mesh.geometry.computeBoundingBox();
-  const boundingBox =  new THREE.Box3().setFromObject( mesh );
+  // const boundingBox =  new THREE.Box3().setFromObject( mesh );
   let centerX;
   if(errorRate.x) {
     centerX = errorRate.x;
@@ -505,7 +508,7 @@ function getCenterPointX(mesh, errorRate) {
     // centerX = 0.5 * ( boundingBox.max.x - boundingBox.min.x );
   }
   
-  let centerY = errorRate.y *0.5;
+  let centerY = errorRate.y;
   let centerZ = errorRate.z;
 
   return new THREE.Vector3(centerX, centerY, centerZ);
@@ -536,8 +539,7 @@ const deleteObject = function(e){
     this.parentElement.parentElement.remove();
     console.log('configurator_list qwe',configurator_list);
     // configurator_list = configurator_list.filter(object => object[0] !== parseInt(objectuuId)); 
-    console.log('configurator_list asd',configurator_list)
-    ;
+    console.log('configurator_list asd',configurator_list);
     target.parentElement.parentElement.remove();
    
   //TODO переписать id на uuid
@@ -551,10 +553,15 @@ const deleteObject = function(e){
     console.log('connector',connector)
     if(connector)
     {
-     
       console.log('object remove',object);
+      console.log('object.scene.userData.connectorId',object.userData.connectorId)
+      // filledPorts.remove(parseInt(object.userData.connectorId))
       scene.remove(object.scene);
+      clearPorts = filledPorts.filter(function(f) {return f !== object.userData.connectorId});
+      
+      console.log('filledPorts',clearPorts);
       console.log('objectPool',objectPool);
+      
       createArea(connector);
     }
 
