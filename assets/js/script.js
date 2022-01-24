@@ -12,7 +12,7 @@ const records = {
       articule:'Артикул 1',
       dataUrl: '',
       id:2,
-      materialName: 'materials.mtl',
+      materialName: 'optica_materials.mtl',
       errorRate:{x:25,y:-53.5,z:56},
       connector_type: 3
     },
@@ -88,7 +88,7 @@ const records = {
     },
     {
       modelName: '1031-0011-A02--ASSY_LM-10G-PxC-20191025.glb',
-      materialName: 'materials.mtl',
+      materialName: 'optica_materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
       title:'1144367 1031 0002 A01 iMX350 PS MV LV-ASSY 1',
       text:'Подробный текст',
@@ -100,7 +100,7 @@ const records = {
     },
     {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
-      materialName: 'materials.mtl',
+      materialName: 'optica_materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
       title:'fea',
       text:'Подробный текст',
@@ -154,10 +154,14 @@ const fov = 50;
 const aspect = 2;  // the canvas default
 const near = 0.01;
 const far = 10;
-controls = new THREE.OrbitControls( camera, renderer.domElement );
+var controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+// call this only in static scenes (i.e., if there is no animation loop)
+controls.addEventListener( 'change', renderer ); 
 //onCLick stuff
 renderer.domElement.addEventListener("mousedown", onclick, true);
 renderer.domElement.addEventListener("mousemove", onMouseMove, true);
+
 // renderer.domElement.addEventListener("contextmenu", contextmenu, false);
 let currentConnector = {object:null};
 
@@ -308,7 +312,7 @@ function main() {
       const color = 0xFFFFF;
       const intensity = 1;
       const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.20 );
-      hemiLight.position.set( 0, 50, 0 );
+      hemiLight.position.set( 0, 10, 0 );
       let dirLight = new THREE.DirectionalLight( 0xffffff, 0.46 );
       dirLight.position.set( -8, 12, 8 );
       dirLight.castShadow = true;
@@ -453,7 +457,8 @@ function main() {
         console.log('object.userData.uuid',objectData.uuid)
         //Заполнение id в userData для модуля
        
-        filledPorts.push(object.userData.connectorId);
+        filledPorts.push(object);
+        console.log('object.userData.connectorId',object.userData.connectorId);
         if(currentConnector) {
           console.log('object.scene.children[0].children[0].position ',object.scene.children[0].children[0].position);
           
@@ -513,6 +518,17 @@ function getCenterPointX(mesh, errorRate) {
 
   return new THREE.Vector3(centerX, centerY, centerZ);
 }
+
+const addPlug = (plug) =>
+{
+  for(let i = 0; i <= plug.length;i++)
+  {   
+      
+      console.log('Port zang', plug[i])
+   
+  }
+} 
+
 const setDetail = (detail) => {
 
   if(currentConnector.object) {
@@ -554,15 +570,17 @@ const deleteObject = function(e){
     if(connector)
     {
       console.log('object remove',object);
-      console.log('object.scene.userData.connectorId',object.userData.connectorId)
+      console.log('object.userData.connectorId',object.userData.connectorId)
       // filledPorts.remove(parseInt(object.userData.connectorId))
+    
       scene.remove(object.scene);
       clearPorts = filledPorts.filter(function(f) {return f !== object.userData.connectorId});
-      
+      addPlug(clearPorts);
       console.log('filledPorts',clearPorts);
       console.log('objectPool',objectPool);
       
       createArea(connector);
+   
     }
 
     
