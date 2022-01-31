@@ -13,8 +13,42 @@ const records = {
       dataUrl: '',
       id:2,
       materialName: 'optica_materials.mtl',
-      errorRate:{x:25,y:-53.5,z:56},
-      connector_type: 3
+      errorRate:{x:29,y:-34,z:50},
+      connector_type: 3,
+      connectors: [     //шаг отступа портов 15
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: {x: 15, y: 12, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-67,y :34, z: -10},
+          connector_type: 4
+        },
+        {
+          id:2,
+          name: 'back_left_bot',
+          scale: {x: 15, y: 12, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-39,y :34, z: -10},
+          connector_type: 4
+        },
+        {
+          id:3,
+          name: 'back_left_bot',
+          scale: {x: 15, y: 12, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-10,y :34, z: -10},
+          connector_type: 4
+        },
+        {
+          id:4,
+          name: 'back_left_bot',
+          scale: {x: 15, y: 12, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:17,y :34, z: -10},
+          connector_type: 4
+        }
+      ],
     },
     {
       id: 1, 
@@ -22,32 +56,35 @@ const records = {
       materialName: 'materials.mtl',
       image:"EP7400-Chassis_Back_2.png",
       title:'Шасси',
+      position:{x:0,y:50,z:0},
       articule:'Артикул 2',
       dataUrl: '',
       text:'Текст',
+
       connectors: [
         {
           id: 1,
           name: 'back_left_top',
           scale: {x: 140, y: 20, z:100},
           position: {x:5, y:10, z: 130},
-          errorRate: {x:4, y: 20, z: 2},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:5,y :10, z: 140},
           connector_type: 3
         },
         {
           id:2,
           name: 'back_left_bot',
           scale: {x: 140, y: 20, z:100},
-          position: {x:5, y:-10, z: 130},
-          errorRate: {x:4, y: 20, z: 2},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:4,y :-10, z: 140},
           connector_type: 1
         },
         {
           id:3,
           name: 'back_right_top',
           scale: {x: 140, y: 20, z:100},
-          position: {x:150, y:10, z: 130},
-          errorRate: {x:-4, y: 20, z: 2},
+          errorRate:{x:-9,y:0,z:0},
+          errorRatePort:{x:150,y :10, z: 140},
           connector_type: 1
         },
         {
@@ -55,7 +92,8 @@ const records = {
           name: 'back_right_bot',
           scale: {x: 140, y: 20, z:100},
           position: {x:150, y:-10, z: 130},
-          errorRate: {x:-4, y: 20, z: 2},
+          errorRate:{x:-8,y:0,z:0},
+          errorRatePort:{x:150,y :-10, z: 140},
           connector_type: 3
         },
         {
@@ -63,7 +101,8 @@ const records = {
           name: 'front_left',
           scale: {x: 90, y: 40, z:100},
           position: {x:-75, y:0, z: -150},
-          errorRate: {x: -12, y: -18, z: -110},
+          errorRatePort:{x:-78,y :-2, z: -120},
+          errorRate:{x:-10,y:-15,z:-140},
           connector_type: 2
         },
         // {
@@ -81,7 +120,8 @@ const records = {
           name: 'front_right',
           scale: {x: 90, y: 40, z:100},
           position: {x:-170, y:0, z: -150},
-          errorRate: {x: -12, y: -18, z: -110},
+          errorRate:{x:-10,y:-15,z:-140},
+          errorRatePort:{x:-170,y :-2, z: -120},
           connector_type: 2
         }
       ]
@@ -95,8 +135,10 @@ const records = {
       articule:'Артикул 3',
       dataUrl: '',
       id: 3,
-      errorRate:{x:25,y:-53.5,z:56},
+      position:{x:0,y:0,z:0},
+      errorRate:{x:0,y:0,z:0},
       connector_type: 1,
+      
     },
     {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
@@ -107,7 +149,76 @@ const records = {
       articule:'Артикул 3',
       dataUrl: '',
       id: 4,
-      errorRate:{x:73,y:-29.2,z:62},
+      position:{x:0,y:0,z:0},
+      errorRate:{x:78,y:-10,z:60},
+
+      connectors: [     //шаг отступа портов 15
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-125,y :10, z: -15},
+          connector_type: 4
+        },
+        {
+          id:2,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-110,y :10, z: -15},
+          connector_type: 4
+        },
+        {
+          id:3,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-95,y :10, z: -15},
+          connector_type: 4
+        },
+        {
+          id:4,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-80,y :10, z: -15},
+          connector_type: 4
+        },
+        {
+          id:5,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-65,y :10, z: -15},
+          connector_type: 4
+        },
+        {
+          id:6,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-50,y :10, z: -15},
+          connector_type: 4
+        },  
+        {
+          id:7,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-35,y :10, z: -15},
+          connector_type: 4
+        },
+        {
+          id:8,
+          name: 'back_left_bot',
+          scale: {x: 10, y: 10, z:20},
+          errorRate:{x:0,y:0,z:0},
+          errorRatePort:{x:-20,y :10, z: -15},
+          connector_type: 4
+        },
+        
+      ],
       connector_type: 1,
     },
     {
@@ -119,20 +230,35 @@ const records = {
       dataUrl: '',
       text:'Подробный текст',
       errorRate:{x:0,y:0,z:0},
+      position:{x:0,y:0,z:0},
       id: 5,
       connector_type: 2,
     },
     {
-      modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
+      modelName: 'Оптический модуль.glb',
       materialName: 'materials.mtl',
       articule:'Артикул 5',
       dataUrl: '',
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
-      title:'FL SWITCH EP7400 M8GRJ45',
+      title:'Оптический модуль',
       text:'Подробный текст',
-      errorRate:{x:0,y:0,z:0},
+      errorRate:{x:4,y:6,z:-38},
+      
       id: 6,
-      connector_type: 2,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Медный модуль.glb',
+      materialName: 'materials.mtl',
+      articule:'Артикул 5',
+      dataUrl: '',
+      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      title:'Медный модуль',
+      text:'Подробный текст',
+      errorRate:{x:4,y:5,z:-35},
+      
+      id: 6,
+      connector_type: 4,
     },
   ]
 };
@@ -148,7 +274,11 @@ const scene = new THREE.Scene();
 const canvas = document.querySelector('#canvas');
 const camera = new THREE.PerspectiveCamera( 100, canvas.width / canvas.height, 10, 1000);
 let canvasPosition = canvas.getBoundingClientRect();
-const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+const renderer = new THREE.WebGLRenderer({
+  canvas, 
+  antialias:true,
+  
+});
 renderer.setClearColor(0xFFFFFF);
 const fov = 50;
 const aspect = 2;  // the canvas default
@@ -157,7 +287,7 @@ const far = 10;
 var controls = new THREE.OrbitControls( camera, renderer.domElement );
 
 // call this only in static scenes (i.e., if there is no animation loop)
-controls.addEventListener( 'change', renderer ); 
+controls.update()
 //onCLick stuff
 renderer.domElement.addEventListener("mousedown", onclick, true);
 renderer.domElement.addEventListener("mousemove", onMouseMove, true);
@@ -209,7 +339,6 @@ function onMouseMove( event ) {
       } else if(focusObject !== firstIntersectObject && focusObject !== currentConnector.object) {
         objectOpacity(focusObject, 1);
         focusObject = null;
-        
       }
   
     } else {
@@ -243,9 +372,7 @@ const setCurrentConnector = (newCurrentConnector) =>
     objectOpacity(currentConnector.object, 1);
     currentConnector = {object:null};
   }
-  console.log('newCurrentConnector', newCurrentConnector.object)
   currentConnector = newCurrentConnector;
-  console.log('currentConnector test',currentConnector)
   objectOpacity(currentConnector.object, 0.1)
 }
 
@@ -260,12 +387,11 @@ function onclick(event) {
       let availableObjects = records.objects.filter(object => object.connector_type === intersects[0].object.userData.type);
       setCurrentConnector(intersects[0]);
       currentConnector = intersects[0];
-      console.log('onmouse',currentConnector)
       objectOpacity(currentConnector.object, 0.5);
 
       if(availableObjects.length > 0)
       {
-        console.log('currentConnector.object',currentConnector.object)
+      
         model_return.innerHTML = '';
         availableObjects.forEach(record => {
           model_return.innerHTML += detailCard(record.id, record.title, record.text, record.image);
@@ -287,22 +413,35 @@ function onclick(event) {
 }
 
 
-const createArea = ( connector) =>
+const createArea = (connector, object, objectId ) =>
 {
-
   let geometry =new THREE.BoxGeometry();
-  let material =new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  let material =new THREE.MeshBasicMaterial({ color: 141145122 });
+
+  //test color
+  if(connector.connector_type == 4) {
+    material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+  }
+  
+  // objectData.parentId =object.scene.id;
+  
+
   let mesh = new THREE.Mesh(geometry, material);
   mesh.scale.set(connector.scale.x, connector.scale.y, connector.scale.z);
-  mesh.position.set(connector.position.x, connector.position.y, connector.position.z);
-  scene.add(mesh);
+  mesh.position.set(object.scene.position.x, object.scene.position.y, object.scene.position.z);
   
-  console.log(mesh);
+  if(connector) {
+    mesh.position.add(getCenterPointX(connector, connector.errorRatePort));
+  }
+
+  scene.add(mesh);
   mesh.userData.type = connector.connector_type;
   mesh.userData.id = connector.id;
   mesh.userData.errorRate = connector.errorRate;
+  mesh.userData.parentId = objectId;
   
   mesh.userData.name = connector.name;
+
   getCenterPoint(mesh)
   connectorPool.push(mesh);
 }
@@ -397,23 +536,33 @@ function main() {
   const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0)) => {
   
     const mtlLoader = new THREE.MTLLoader();
-    
+    const dracoLoader = new THREE.DRACOLoader();
+    dracoLoader.setPath('draco/gltf/');
     mtlLoader.load( objectData.materialName , function( materials ) {
     materials.preload();
-   
+
     var objLoader = new THREE.GLTFLoader();
     // objLoader.setMaterials( materials );
+    objLoader.setDRACOLoader( dracoLoader );
     objLoader.load( objectData.modelName, function ( object ) {
       
-      scene.add( object.scene );
-      console.log("Data info" , objectData.id);
-      console.log('object waf', objectData);
-      
+      scene.add( object.scene );    
+      // objectData.uuid = object.scene.uuid;
+
+     
+      object.scene.position.copy(position);
+     
+      objectData.position = object.scene.children[0].children[0].position;
       objectData.uuid =object.scene.uuid;
-      object.scene.children[0].children[0].position.copy(position);
+      
+     
+      
+      for(let i = 0; i <= objectData.position;i++)
+      {
+      
+      }
 
       configurator.push(objectData);
-      
       configurator_table.append(modal_configurator(objectData.id,objectData.uuid,objectData.title,objectData.articule,objectData.text,objectData.image));
     
       toDataURL('assets/images/'+objectData.image, function(dataUrl) {
@@ -422,46 +571,44 @@ function main() {
           image:dataUrl,
           width:100
         }]);
-        // console.log('RESULT:', dataUrl)
+      
       })
-      console.log('массив данных pdf',configurator_list);
+      
       configurator.push(objectData);
-      console.log('objectData',objectData.uuid);
+      
       if(configurator.length > 1)
       {
         confifurator_block();
       }
       
-     
       if(objectData.modelName === 'model_test.glb') {
         new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
-      } 
-      
-      else {
+      } else {
       
         if(objectData.modelName == '1031-0011-A02--ASSY_LM-10G-PxC-20191025.glb') {
-      
           new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter( object.position );
           object.scene.children[0].children[0].rotation.y= (3.14 / 2) * 2;
         }
-        
+        if(objectData.modelName === 'Медный модуль.glb' || objectData.modelName ==='Оптический модуль.glb')
+        {
+          new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter( object.position );
+          
+          object.scene.children[0].children[0].rotation.z= -4.65;
+          object.scene.children[0].children[0].rotation.x= -4.65;
+        }
         object.userData.connectorId = currentConnector.object.userData.id;
+        object.userData.parentId = currentConnector.object.userData.parentId;
         object.userData.errorRate =objectData.errorRate;
-        console.log('object data',objectData)
+        object.userData.uuid = currentConnector.object.uuid;
+        object.userData.children = currentConnector.object.children;
+        objectData.uuid =object.scene.uuid;
+        
           // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
-        object.userData.id = objectData.id;
-      
-        
-        // object.userData.uuid = objectData.uuid;
-        console.log('object.userData.uuid',objectData.uuid)
-        //Заполнение id в userData для модуля
-       
+        object.userData.id = objectData.id; 
         filledPorts.push(object);
-        console.log('object.userData.connectorId',object.userData.connectorId);
+
         if(currentConnector) {
-          console.log('object.scene.children[0].children[0].position ',object.scene.children[0].children[0].position);
-          
           object.scene.position.add(currentConnector.object.userData.errorRate);
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           currentConnector = {object:null};
@@ -470,10 +617,23 @@ function main() {
       }
       
       objectPool.push(object);
+
+      // if(objectData.connector_position){
+      //   objectData.connector_position.map(connector_position => createArea(connector_position));
+        
+      // } else 
       
       if(objectData.connectors) {
-        console.log('objectData.connectors', objectData.connectors);
-        objectData.connectors.map(connector => createArea(connector));
+        // console.log('objectData.connectors',objectData.connectors);
+        console.log('objectData',objectData.connectors)
+        
+        for(let i = 0; i < objectData.connectors.length;i++){
+            objectData.connectors[i].uuid = object.scene.uuid;
+            // object.userData.connectorArea = objectData.connectors[i].uuid;
+            console.log('element objectData',objectData);
+        }
+
+        objectData.connectors.map(connector => createArea(connector, object , objectData.id));
       }
 
       return object;
@@ -481,13 +641,6 @@ function main() {
     } );
     
   };
-
-
-
-  const remove_position = (object, connector) =>
-  {
-    console.log()
-  }
   
   main();
 
@@ -506,15 +659,18 @@ function getCenterPointX(mesh, errorRate) {
 
   // mesh.geometry.computeBoundingBox();
   // const boundingBox =  new THREE.Box3().setFromObject( mesh );
+
   let centerX;
+  let centerY;
+  let centerZ;
   if(errorRate.x) {
     centerX = errorRate.x;
   } else {
     // centerX = 0.5 * ( boundingBox.max.x - boundingBox.min.x );
   }
   
-  let centerY = errorRate.y;
-  let centerZ = errorRate.z;
+  centerY = errorRate.y;
+  centerZ = errorRate.z;
 
   return new THREE.Vector3(centerX, centerY, centerZ);
 }
@@ -523,8 +679,7 @@ const addPlug = (plug) =>
 {
   for(let i = 0; i <= plug.length;i++)
   {   
-      
-      console.log('Port zang', plug[i])
+      // console.log('Port zang', i)
    
   }
 } 
@@ -532,97 +687,73 @@ const addPlug = (plug) =>
 const setDetail = (detail) => {
 
   if(currentConnector.object) {
-
+    console.log('currentConnector',currentConnector.object)
     scene.remove(currentConnector.object);
-    
     instantiateObject(detail, currentConnector.object.position);
-    // currentConnector = {object: null}; 
-    console.log('fwfwafwafawfaw',currentConnector)
-  
-  
   }
 
   // return object;
 };
 
-const deleteObject = function(e){
-  console.log(e);
-  
+const deleteObject = function(e){ 
   const target = e.target;
-  console.log('id детали',target.dataset);
   const objectuuId = this.dataset['uuid'];
-  console.log('objectuuId',objectuuId);
     this.parentElement.parentElement.remove();
-    console.log('configurator_list qwe',configurator_list);
     // configurator_list = configurator_list.filter(object => object[0] !== parseInt(objectuuId)); 
-    console.log('configurator_list asd',configurator_list);
     target.parentElement.parentElement.remove();
-   
   //TODO переписать id на uuid
-
   const object = objectPool.find(object => object.scene.uuid === objectuuId);
-  console.log('object',object)
+
+
   if(object)
-  {
-    const connector = records.objects[1].connectors.find(connector => connector.id === object.userData.connectorId );
-    console.log(object);
-    console.log('connector',connector)
-    if(connector)
-    {
-      console.log('object remove',object);
-      console.log('object.userData.connectorId',object.userData.connectorId)
-      // filledPorts.remove(parseInt(object.userData.connectorId))
-    
+  { 
+    let recordItem = records.objects.find(item => item.id === object.userData.id);
+    console.log('recordItem',recordItem);
+    if(recordItem) {
+
       scene.remove(object.scene);
-      clearPorts = filledPorts.filter(function(f) {return f !== object.userData.connectorId});
-      addPlug(clearPorts);
-      console.log('filledPorts',clearPorts);
-      console.log('objectPool',objectPool);
+      const parentObject = records.objects.find(item =>item.id === object.userData.parentId);
       
-      createArea(connector);
-   
+      if(parentObject)
+      {
+        const connector =  parentObject.connectors.find(connector => connector.id === object.userData.connectorId );
+        
+        if(connector)
+        {
+          const parentSceneObject = objectPool.find(object => object.uuid === object.userData.uuid);
+          // filledPorts.remove(parseInt(object.userData.connectorId))
+          // scene.remove(object.scene);
+          clearPorts = filledPorts.filter(function(f) {return f !== object.userData.connectorId});
+          addPlug(clearPorts);      
+          createArea(connector, parentSceneObject, object.userData.parentId);
+        } 
+
+      }      
     }
-
-    
+    // const connector = records.objects.connectors.find(connector => connector.id === object.userData.connectorId );
   }
-  console.log('objectPool', objectPool);
 }
 
-const getOjbect = (object) =>
-{
-  // object = object.scene.children[0].children[0].children;
-  console.log(object.scene.children[0].children[0].position);
-  // return object;
-}
+
 const replaceArea = (objectId) =>
 {
   object = records.objects.find(item => item.id === objectId);
-  console.log('object ',object);
   if(object) {
     setDetail(object);
   } else {
-    console.log('can\'t find object', objectId)
+   
   }
 }
 
-const modelReplace = (objectId) =>
-{
-  object =records.objects.find(item => item.id ===objectId);
-  if(object)
-  {
-    
-  }
-}
 
 const confifurator_block = () =>
 {
   configurator_button_list.disabled = false;
+  
   if(configurator)
   {
-
     for(let index = 0;index < configurator.length;index ++)
-    {
-      
+    { 
       modal_configurator(configurator[index])
     }
   }
@@ -692,8 +823,6 @@ var docInfo = {
 
 const createPdfconfigurator = () =>
 {
-  // console.log('body', docInfo.content[1].table.body);
-  console.log('docInfo.content[1].table.body', docInfo.content[1].table.body);
 
   const pdfItemList = configurator_list.map(item => {
     return [
