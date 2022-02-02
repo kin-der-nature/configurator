@@ -163,7 +163,6 @@ const records = {
       id: 4,
       position: { x: 0, y: 0, z: 0 },
       errorRate: { x: 78, y: -10, z: 60 },
-
       connectors: [     //шаг отступа портов 15
         {
           id: 1,
@@ -352,7 +351,6 @@ const zeroPosition = new THREE.Vector3(0, 0, 0);
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
 let zang = records.objects.find(object => object.id === 8);
-console.log('wfawfawfa', zang)
 let lastInsertObject;
 
 function onMouseMove(event) {
@@ -436,10 +434,6 @@ function onclick(event) {
     // addObject();
     // scene.remove(intersects[0].object.parent);
   }
-  // for(let index = 0; index < intersects.length; index++)
-  // {
-
-  // }
 
 }
 
@@ -448,13 +442,13 @@ const createArea = (connector, object, objectId) => {
   let geometry = new THREE.BoxGeometry();
   let material = new THREE.MeshBasicMaterial({ color: 141145122 });
 
-  console.log('createArea object', object);
+
 
   //test color
   if (connector.connector_type == 4) {
     material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
   }
-
+  console.log()
   // objectData.parentId =object.scene.id;
 
   let mesh = new THREE.Mesh(geometry, material);
@@ -473,6 +467,8 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.name = connector.name;
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
+
+  
 
   getCenterPoint(mesh)
   connectorPool.push(mesh);
@@ -560,15 +556,13 @@ function toDataURL(src, callback, outputFormat) {
 
 }
 
-
-
 let rotete_test = () => {
   camera.position.z *= -1;
   camera.position.x *= -1;
   camera.lookAt(new THREE.Vector3(0, 0.05, 0));
 }
 
-const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0)) => {
+const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), replacedConnector = null) => {
 
   const mtlLoader = new THREE.MTLLoader();
   const dracoLoader = new THREE.DRACOLoader();
@@ -621,11 +615,17 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0)) =>
           object.scene.children[0].children[0].rotation.x = -4.65;
         }
 
-        object.userData.connectorId = currentConnector.object.userData.id;
-        object.userData.parentId = currentConnector.object.userData.parentId;
+        // object.userData = {
+        //   connectorId: currentConnector.object.userData.id,
+        //   parentId: currentConnector.object.userData.parentId,
+        //   errorRate: objectData.errorRate,
+        //   children: currentConnector.object.children,
+        //   uuid: currentConnector.object.uuid,
+        //   connectorLevel: objectData.connectorLevel,
+        //   id: objectData.id
+        // };
+
         object.userData.errorRate = objectData.errorRate;
-        object.userData.children = currentConnector.object.children;
-        object.userData.uuid = currentConnector.object.uuid;
         object.userData.connectorLevel = objectData.connectorLevel;
         objectData.uuid = object.scene.uuid;
 
@@ -634,14 +634,28 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0)) =>
         object.userData.id = objectData.id;
         filledPorts.push(object);
 
-        if (currentConnector) {
-          console.log('currentConnector', currentConnector);
+        if (replacedConnector) {
+          currentConnector.object = replacedConnector;
+        }
 
-          object.scene.position.add(currentConnector.object.userData.errorRate);
+        if (currentConnector.object) {
+          object.userData.parentId = currentConnector.object.userData.parentId;
+          object.userData.connectorId = currentConnector.object.userData.id;
+          object.userData.children = currentConnector.object.children;
+          object.userData.uuid = currentConnector.object.uuid;
+
+          if (replacedConnector) {
+            object.scene.position.add(replacedConnector.userData.errorRate);
+          }else{
+            object.scene.position.add(currentConnector.object.userData.errorRate);
+          }
+
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
           currentConnector = { object: null };
         }
+
+       
 
       }
 
@@ -703,11 +717,9 @@ function getCenterPointX(mesh, errorRate) {
 
 const addPlug = (plug) => {
 
-  console.log('plug awewegbvagwe', plug);
-  
   plug = plug.map((item) => {
     item.zang_model = zang;
-    console.log('item', item);
+
     setDetail(item);
   })
   // for (let i = 0; i <= plug.length; i++) {
@@ -719,16 +731,18 @@ const addPlug = (plug) => {
 const setDetail = (detail) => {
 
   if (currentConnector.object) {
-    console.log('detail', detail);
 
     instantiateObject(detail, currentConnector.object.position);
     scene.remove(currentConnector.object);
   }
 
   if (detail.zang_model) {
-    console.log('detail.zang_model posititon', zang);
-    instantiateObject(detail.zang_model, detail.position);
+    console.log('detail',detail)
+    instantiateObject(detail.zang_model, detail.position, detail);
+   
+    connectorPool = connectorPool.filter(item => item.uuid === detail.uuid);
     scene.remove(detail);
+   
   }
 
   // return object;
@@ -743,7 +757,7 @@ const deleteObject = function (e) {
   // configurator_list = configurator_list.filter(object => object[0] !== parseInt(objectuuId)); 
   target.parentElement.parentElement.remove();
   //TODO переписать id на uuid
-  console.log('connectorPool', connectorPool)
+
   const object = objectPool.find(object => object.scene.uuid === objectuuId);
 
 
@@ -757,31 +771,29 @@ const deleteObject = function (e) {
 
       if (parentObject) {
         const connector = parentObject.connectors.find(connector => connector.id === object.userData.connectorId);
-
+      
         if (connector) {
+         
           const parentSceneObject = objectPool.find(object => object.uuid === object.userData.uuid);
-          console.log('connector', connector)
-          console.log('parentSceneObject', parentSceneObject)
           objectPool = objectPool.map((item) => {
+         
 
             if (item.uuid == parentSceneObject.scene.userData.parentObjectUuid && parentSceneObject.scene.userData.parentObjectUuid) {
-              console.log('item', item)
               scene.remove(item.scene);
+              
+              
+
             } else {
               return item;
             }
 
           });
 
-          let connectorZang = connectorPool.filter(item => item.userData.connectorLevel === 1);
-
-
-          console.log('connectorZang', connectorZang);
           // filledPorts.remove(parseInt(object.userData.connectorId))
           // scene.remove(object.scene);
-          clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
 
-          addPlug(connectorZang);
+          clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
+          console.log('connector',connector);
           createArea(connector, parentSceneObject, object.userData.parentId);
         }
 
@@ -797,13 +809,38 @@ const replaceArea = (event) => {
   object = records.objects.find(item => item.id == event.target.dataset.modelId);
 
   if (object) {
-    console.log('object egaegageaega', object)
+
     setDetail(object);
   } else {
 
   }
 }
 
+const setPlugs = () => {
+  let connectorZang = connectorPool.filter(item => item.userData.connectorLevel === 1);
+  let objectPoolId = objectPool.map( (item) => {
+
+    if(item.userData.connectorId) {
+      console.log('item.userData.connectorId',item.userData.connectorId);
+    }
+
+  });
+  console.log('objectPoolId',objectPoolId)
+  // let connectorZangId =connectorPool.filter(item => item);
+  console.log('objectPool', objectPool)
+
+  // if (objectPool.userData) {
+  //   console.log('objectPool.userData',objectPool.userData)
+  // }
+
+  // if (connectorZang.userData.id === objectPool.object.connectorId) {
+  //   console.log('connectorZang.userData.id', connectorZang.userData.id)
+  // }
+
+  // console.log('connectorZangId',connectorZangId)
+  console.log('connectorZang', connectorZang)
+  addPlug(connectorZang);
+}
 
 const confifurator_block = () => {
   configurator_button_list.disabled = false;
