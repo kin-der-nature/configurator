@@ -89,7 +89,7 @@ const records = {
           id: 3,
           name: 'back_right_top',
           scale: { x: 140, y: 20, z: 100 },
-          errorRate: { x: -9, y: 0, z: 0 },
+          errorRate: { x: -8, y: 0, z: 0 },
           errorRatePort: { x: 150, y: 10, z: 140 },
           connector_type: 1,
           connectorLevel: 1,
@@ -138,25 +138,100 @@ const records = {
         }
       ]
     },
-    {
-      modelName: '1031-0011-A02--ASSY_LM-10G-PxC-20191025.glb',
+     {
+      modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
-      image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: '1144367 1031 0002 A01 iMX350 PS MV LV-ASSY 1',
+      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      title: 'FL SWITCH EP7400 M8GRJ45',
       text: 'Подробный текст',
       articule: 'Артикул 3',
       dataUrl: '',
-      id: 3,
+      id: 4,
       position: { x: 0, y: 0, z: 0 },
-      errorRate: { x: 0, y: 0, z: 0 },
-      connector_type: 1,
+      errorRate: { x: 90, y: 8, z: 55 },
+      connectors: [     //шаг отступа портов 14.5
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -137, y: -8, z: -15 },
+          connector_type: 4,
 
+
+        },
+        {
+          id: 2,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -122.5, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 3,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -108.5, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 4,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -94, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 5,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -78, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 6,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -64, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 7,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -49.5, y: -8, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+        {
+          id: 8,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -35, y: -8, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+
+      ],
+      connector_type: 1,
     },
     {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
-      image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'fea',
+      image: 'FL SWITCH EP7400 M8GSFP 2.png',
+      title: 'FL SWITCH EP7400 M8GSFP',
       text: 'Подробный текст',
       articule: 'Артикул 3',
       dataUrl: '',
@@ -169,7 +244,7 @@ const records = {
           name: 'back_left_top',
           scale: { x: 10, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -125, y: 10, z: -15 },
+          errorRatePort: { x: -122, y: 10, z: -15 },
           connector_type: 4,
 
 
@@ -179,7 +254,7 @@ const records = {
           name: 'back_left_bot',
           scale: { x: 10, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -110, y: 10, z: -15 },
+          errorRatePort: { x: -108, y: 10, z: -15 },
           connector_type: 4,
 
         },
@@ -244,7 +319,7 @@ const records = {
     {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
-      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
       title: 'FL SWITCH EP7400 M8GRJ45 1',
       articule: 'Артикул 4',
       dataUrl: '',
@@ -275,7 +350,7 @@ const records = {
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
       title: 'Медный модуль',
       text: 'Подробный текст',
-      errorRate: { x: 4, y: 5, z: -35 },
+      errorRate: { x: 1, y: 6, z: -45 },
 
       id: 7,
       connector_type: 4,
@@ -440,7 +515,7 @@ function onclick(event) {
 
 const createArea = (connector, object, objectId) => {
   let geometry = new THREE.BoxGeometry();
-  let material = new THREE.MeshBasicMaterial({ color: 141145122 });
+  let material = new THREE.MeshBasicMaterial({ color: '#575757'});
 
 
 
@@ -615,6 +690,10 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.scene.children[0].children[0].rotation.x = -4.65;
         }
 
+        if(objectData.modelName === 'Медный модуль.glb') {
+          new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
+          object.scene.children[0].children[0].rotation.z = -7.85;
+        }
         // object.userData = {
         //   connectorId: currentConnector.object.userData.id,
         //   parentId: currentConnector.object.userData.parentId,
