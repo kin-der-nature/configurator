@@ -138,7 +138,7 @@ const records = {
         }
       ]
     },
-     {
+    {
       modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
@@ -334,7 +334,7 @@ const records = {
       materialName: 'materials.mtl',
       articule: 'Артикул 5',
       dataUrl: '',
-      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      image: 'Оптичeский модуль.png',
       title: 'Оптический модуль',
       text: 'Подробный текст',
       errorRate: { x: 4, y: 6, z: -38 },
@@ -347,7 +347,7 @@ const records = {
       materialName: 'materials.mtl',
       articule: 'Артикул 5',
       dataUrl: '',
-      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      image: 'Медный модуль.png',
       title: 'Медный модуль',
       text: 'Подробный текст',
       errorRate: { x: 1, y: 6, z: -45 },
@@ -360,8 +360,8 @@ const records = {
       materialName: 'materials.mtl',
       articule: 'Артикул 5',
       dataUrl: '',
-      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
-      title: 'Медный модуль',
+      image: 'Заглушка.png',
+      title: 'Заглушка',
       text: 'Подробный текст',
       errorRate: { x: 78, y: -10, z: 60 },
       id: 8,
@@ -444,6 +444,7 @@ function onMouseMove(event) {
         focusObject = firstIntersectObject;
 
         objectOpacity(focusObject, 0.5);
+
       } else if (focusObject !== firstIntersectObject && focusObject !== currentConnector.object) {
         objectOpacity(focusObject, 1);
         focusObject = null;
@@ -515,15 +516,11 @@ function onclick(event) {
 
 const createArea = (connector, object, objectId) => {
   let geometry = new THREE.BoxGeometry();
-  let material = new THREE.MeshBasicMaterial({ color: '#575757'});
-
-
-
+  let material = new THREE.MeshBasicMaterial({ color: '#575757' });
   //test color
   if (connector.connector_type == 4) {
-    material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    material = new THREE.MeshBasicMaterial({ color: '#cbced3' });
   }
-  console.log()
   // objectData.parentId =object.scene.id;
 
   let mesh = new THREE.Mesh(geometry, material);
@@ -543,10 +540,9 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
 
-  
-
   getCenterPoint(mesh)
   connectorPool.push(mesh);
+  
 }
 
 
@@ -650,8 +646,9 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
     objLoader.setDRACOLoader(dracoLoader);
 
     objLoader.load(objectData.modelName, function (object) {
-
+      let modelObject = currentConnector.object;
       scene.add(object.scene);
+
       // objectData.uuid = object.scene.uuid;
       object.scene.position.copy(position);
       objectData.position = object.scene.children[0].children[0].position;
@@ -690,7 +687,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.scene.children[0].children[0].rotation.x = -4.65;
         }
 
-        if(objectData.modelName === 'Медный модуль.glb') {
+        if (objectData.modelName === 'Медный модуль.glb') {
           new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
           object.scene.children[0].children[0].rotation.z = -7.85;
         }
@@ -718,40 +715,33 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         }
 
         if (currentConnector.object) {
+
+          if (replacedConnector) {
+            object.scene.position.add(replacedConnector.userData.errorRate);
+          } else {
+            object.scene.position.add(currentConnector.object.userData.errorRate);
+          }
           object.userData.parentId = currentConnector.object.userData.parentId;
           object.userData.connectorId = currentConnector.object.userData.id;
           object.userData.children = currentConnector.object.children;
           object.userData.uuid = currentConnector.object.uuid;
-
-          if (replacedConnector) {
-            object.scene.position.add(replacedConnector.userData.errorRate);
-          }else{
-            object.scene.position.add(currentConnector.object.userData.errorRate);
-          }
 
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
           currentConnector = { object: null };
         }
 
-       
+
 
       }
 
       objectPool.push(object);
 
-      // if(objectData.connector_position){
-      //   objectData.connector_position.map(connector_position => createArea(connector_position));
-
-      // } else 
-
       if (objectData.connectors) {
-
         objectData.connectors.map(connector => createArea(connector, object, objectData.id));
       }
 
-      //TODO refactor
-      // lastInsertObject = object.scene;
+      lastInsertObject = object.scene;
 
       return object, lastInsertObject;
     });
@@ -816,12 +806,9 @@ const setDetail = (detail) => {
   }
 
   if (detail.zang_model) {
-    console.log('detail',detail)
     instantiateObject(detail.zang_model, detail.position, detail);
-   
     connectorPool = connectorPool.filter(item => item.uuid === detail.uuid);
     scene.remove(detail);
-   
   }
 
   // return object;
@@ -839,40 +826,45 @@ const deleteObject = function (e) {
 
   const object = objectPool.find(object => object.scene.uuid === objectuuId);
 
-
   if (object) {
     let recordItem = records.objects.find(item => item.id === object.userData.id);
 
     if (recordItem) {
 
-      scene.remove(object.scene);
+     
+
       const parentObject = records.objects.find(item => item.id === object.userData.parentId);
 
       if (parentObject) {
         const connector = parentObject.connectors.find(connector => connector.id === object.userData.connectorId);
-      
-        if (connector) {
-         
-          const parentSceneObject = objectPool.find(object => object.uuid === object.userData.uuid);
-          objectPool = objectPool.map((item) => {
-         
 
+        if (connector) {
+
+          const parentSceneObject = objectPool.find(object => object.uuid === object.userData.uuid);
+          // console.log('objectPool',objectPool);
+          objectPool = objectPool.map((item) => {
+            console.log('objectPool', item);
             if (item.uuid == parentSceneObject.scene.userData.parentObjectUuid && parentSceneObject.scene.userData.parentObjectUuid) {
-              scene.remove(item.scene);
-              
-              
+
+              // scene.remove(item.scene);
 
             } else {
               return item;
             }
 
           });
-
+          // connectorPool.map()
           // filledPorts.remove(parseInt(object.userData.connectorId))
-          // scene.remove(object.scene);
+          connectorPool = connectorPool.map((item)=>{
+            console.log('connectorPool item',item)
 
+            if(object.scene.uuid === item.userData.parentUuid) {
+                scene.remove(item);
+            }
+          })
+          scene.remove(object.scene);
+          console.log('connectorPool',connectorPool);
           clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
-          console.log('connector',connector);
           createArea(connector, parentSceneObject, object.userData.parentId);
         }
 
@@ -897,14 +889,14 @@ const replaceArea = (event) => {
 
 const setPlugs = () => {
   let connectorZang = connectorPool.filter(item => item.userData.connectorLevel === 1);
-  let objectPoolId = objectPool.map( (item) => {
+  let objectPoolId = objectPool.map((item) => {
 
-    if(item.userData.connectorId) {
-      console.log('item.userData.connectorId',item.userData.connectorId);
+    if (item.userData.connectorId) {
+      console.log('item.userData.connectorId', item.userData.connectorId);
     }
 
   });
-  console.log('objectPoolId',objectPoolId)
+  console.log('objectPoolId', objectPoolId)
   // let connectorZangId =connectorPool.filter(item => item);
   console.log('objectPool', objectPool)
 
