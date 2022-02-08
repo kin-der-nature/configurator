@@ -460,9 +460,7 @@ function onMouseMove(event) {
 
         focusObject = null;
       }
-
     }
-
   }
 }
 
@@ -529,6 +527,7 @@ const createArea = (connector, object, objectId) => {
 
   if (connector) {
     mesh.position.add(getCenterPointX(connector, connector.errorRatePort));
+    // mesh.position.set(connector.errorRatePort.x,connector.errorRatePort.y,connector.errorRatePort.z);
   }
 
   scene.add(mesh);
@@ -539,7 +538,8 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.name = connector.name;
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
-
+  console.log('connector.errorRatePort',connector.errorRatePort);
+  console.log('mesh.position',mesh.position);
   getCenterPoint(mesh)
   connectorPool.push(mesh);
   
@@ -713,7 +713,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         if (replacedConnector) {
           currentConnector.object = replacedConnector;
         }
-
+        
         if (currentConnector.object) {
 
           if (replacedConnector) {
@@ -730,8 +730,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           lastInsertObject = object;
           currentConnector = { object: null };
         }
-
-
 
       }
 
@@ -777,7 +775,7 @@ function getCenterPointX(mesh, errorRate) {
   } else {
     // centerX = 0.5 * ( boundingBox.max.x - boundingBox.min.x );
   }
-
+  centerX = errorRate.x;
   centerY = errorRate.y;
   centerZ = errorRate.z;
 
@@ -788,8 +786,11 @@ const addPlug = (plug) => {
 
   plug = plug.map((item) => {
     item.zang_model = zang;
-
-    setDetail(item);
+    
+    if(item) {
+      setDetail(item);
+    }
+  
   })
   // for (let i = 0; i <= plug.length; i++) {
   //   console.log('Port zang', i);
@@ -802,12 +803,14 @@ const setDetail = (detail) => {
   if (currentConnector.object) {
 
     instantiateObject(detail, currentConnector.object.position);
+    
     scene.remove(currentConnector.object);
   }
 
   if (detail.zang_model) {
     instantiateObject(detail.zang_model, detail.position, detail);
-    connectorPool = connectorPool.filter(item => item.uuid === detail.uuid);
+    connectorPool = connectorPool.filter(item => item.uuid !== detail.uuid);
+   
     scene.remove(detail);
   }
 
@@ -830,9 +833,6 @@ const deleteObject = function (e) {
     let recordItem = records.objects.find(item => item.id === object.userData.id);
 
     if (recordItem) {
-
-     
-
       const parentObject = records.objects.find(item => item.id === object.userData.parentId);
 
       if (parentObject) {
@@ -841,9 +841,9 @@ const deleteObject = function (e) {
         if (connector) {
 
           const parentSceneObject = objectPool.find(object => object.uuid === object.userData.uuid);
-          // console.log('objectPool',objectPool);
+          console.log('parentSceneObject',parentSceneObject)
           objectPool = objectPool.map((item) => {
-            console.log('objectPool', item);
+      
             if (item.uuid == parentSceneObject.scene.userData.parentObjectUuid && parentSceneObject.scene.userData.parentObjectUuid) {
 
               // scene.remove(item.scene);
@@ -853,18 +853,17 @@ const deleteObject = function (e) {
             }
 
           });
-          // connectorPool.map()
-          // filledPorts.remove(parseInt(object.userData.connectorId))
-          connectorPool = connectorPool.map((item)=>{
-            console.log('connectorPool item',item)
-
-            if(object.scene.uuid === item.userData.parentUuid) {
-                scene.remove(item);
-            }
-          })
-          scene.remove(object.scene);
           console.log('connectorPool',connectorPool);
+          let connectorPoolDelete = connectorPool.filter(item =>item.userData.parentUuid ===object.scene.uuid);
+          connectorPoolDelete = connectorPoolDelete.map((item) =>{
+            connectorPool = connectorPool.filter(element => element !== item);
+            scene.remove(item);
+          })
+      
+          scene.remove(object.scene);
+          
           clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
+          console.log('connector',connector)
           createArea(connector, parentSceneObject, object.userData.parentId);
         }
 
@@ -892,13 +891,13 @@ const setPlugs = () => {
   let objectPoolId = objectPool.map((item) => {
 
     if (item.userData.connectorId) {
-      console.log('item.userData.connectorId', item.userData.connectorId);
+   
     }
 
   });
-  console.log('objectPoolId', objectPoolId)
+
   // let connectorZangId =connectorPool.filter(item => item);
-  console.log('objectPool', objectPool)
+
 
   // if (objectPool.userData) {
   //   console.log('objectPool.userData',objectPool.userData)
