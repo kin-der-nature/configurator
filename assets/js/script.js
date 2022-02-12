@@ -7,9 +7,9 @@ const records = {
     {
       modelName: '1031-0011-A02--ASSY_LM-10G-PxC-20191025.glb',
       image: 'FL SWITCH EP7400 M4TGSFP 1.png',
-      title: 'FL SWITCH EP7400 M4TGSFP 1',
+      title: 'FL SWITCH EP7400-M4TGSFP',
       text: 'Текст',
-      articule: 'Артикул 1',
+      articule: '1144388',
       dataUrl: '',
       id: 2,
       materialName: 'optica_materials.mtl',
@@ -69,7 +69,7 @@ const records = {
           position: { x: 5, y: 10, z: 130 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 5, y: 10, z: 140 },
-          connector_type: 3,
+          connector_type: 1,
           connectorLevel: 1,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
@@ -91,7 +91,7 @@ const records = {
           scale: { x: 140, y: 20, z: 100 },
           errorRate: { x: -8, y: 0, z: 0 },
           errorRatePort: { x: 150, y: 10, z: 140 },
-          connector_type: 1,
+          connector_type: 3,
           connectorLevel: 1,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
@@ -103,7 +103,7 @@ const records = {
           position: { x: 150, y: -10, z: 130 },
           errorRate: { x: -8, y: 0, z: 0 },
           errorRatePort: { x: 150, y: -10, z: 140 },
-          connector_type: 3,
+          connector_type: 1,
           connectorLevel: 1,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
@@ -144,9 +144,9 @@ const records = {
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
       title: 'FL SWITCH EP7400 M8GRJ45',
       text: 'Подробный текст',
-      articule: 'Артикул 3',
+      articule: '1144375',
       dataUrl: '',
-      id: 4,
+      id: 3,
       position: { x: 0, y: 0, z: 0 },
       errorRate: { x: 90, y: 8, z: 55 },
       connectors: [     //шаг отступа портов 14.5
@@ -231,9 +231,9 @@ const records = {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400 M8GSFP',
+      title: 'FL SWITCH EP7400-M8GSFP',
       text: 'Подробный текст',
-      articule: 'Артикул 3',
+      articule: '1144383',
       dataUrl: '',
       id: 4,
       position: { x: 0, y: 0, z: 0 },
@@ -320,13 +320,39 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400 M8GRJ45 1',
-      articule: 'Артикул 4',
+      title: 'FL SWITCH EP7400-PS-HV',
+      articule: '1144175',
       dataUrl: '',
       text: 'Подробный текст',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
       id: 5,
+      connector_type: 2,
+    },
+    {
+      modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
+      materialName: 'materials.mtl',
+      image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
+      title: 'FL SWITCH EP7400-PS-LV',
+      articule: '1144367',
+      dataUrl: '',
+      text: 'Подробный текст',
+      errorRate: { x: 0, y: 0, z: 0 },
+      position: { x: 0, y: 0, z: 0 },
+      id: 6,
+      connector_type: 2,
+    },
+    {
+      modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
+      materialName: 'materials.mtl',
+      image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
+      title: 'FL SWITCH EP7400-PS-MV',
+      articule: '1144372',
+      dataUrl: '',
+      text: 'Подробный текст',
+      errorRate: { x: 0, y: 0, z: 0 },
+      position: { x: 0, y: 0, z: 0 },
+      id: 7,
       connector_type: 2,
     },
     {
@@ -339,7 +365,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 4, y: 6, z: -38 },
 
-      id: 6,
+      id: 8,
       connector_type: 4,
     },
     {
@@ -352,7 +378,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 1, y: 6, z: -45 },
 
-      id: 7,
+      id: 9,
       connector_type: 4,
     },
     {
@@ -364,7 +390,7 @@ const records = {
       title: 'Заглушка',
       text: 'Подробный текст',
       errorRate: { x: 78, y: -10, z: 60 },
-      id: 8,
+      id: 10,
     },
   ]
 };
@@ -425,7 +451,7 @@ camera.position.set(0, 0.05, 400);
 const zeroPosition = new THREE.Vector3(0, 0, 0);
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
-let zang = records.objects.find(object => object.id === 8);
+let zang = records.objects.find(object => object.id === 10);
 let lastInsertObject;
 
 function onMouseMove(event) {
@@ -460,7 +486,9 @@ function onMouseMove(event) {
 
         focusObject = null;
       }
+
     }
+
   }
 }
 
@@ -527,7 +555,6 @@ const createArea = (connector, object, objectId) => {
 
   if (connector) {
     mesh.position.add(getCenterPointX(connector, connector.errorRatePort));
-    // mesh.position.set(connector.errorRatePort.x,connector.errorRatePort.y,connector.errorRatePort.z);
   }
 
   scene.add(mesh);
@@ -538,11 +565,11 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.name = connector.name;
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
-  console.log('connector.errorRatePort',connector.errorRatePort);
-  console.log('mesh.position',mesh.position);
+  console.log('mesh.userData.parentUuid', mesh.userData.parentUuid)
+  // console.log('mesh.position',mesh.position)
   getCenterPoint(mesh)
   connectorPool.push(mesh);
-  
+
 }
 
 
@@ -647,24 +674,27 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
     objLoader.load(objectData.modelName, function (object) {
       let modelObject = currentConnector.object;
+      
       scene.add(object.scene);
-
+      
       // objectData.uuid = object.scene.uuid;
       object.scene.position.copy(position);
       objectData.position = object.scene.children[0].children[0].position;
       objectData.uuid = object.scene.uuid;
+      
       configurator.push(objectData);
-      configurator_table.append(modal_configurator(objectData.id, objectData.uuid, objectData.title, objectData.articule, objectData.text, objectData.image));
-
-      toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+    
+        console.log('objectData.childrenUUidModel',objectData.childrenUUidModel)
+        configurator_table.append(modal_configurator(objectData.id, objectData.uuid,objectData.childrenUUidModel, objectData.title, objectData.articule, objectData.text, objectData.image));
+        toDataURL('assets/images/' + objectData.image, function (dataUrl) {
 
         configurator_list.push([objectData.id, objectData.uuid, objectData.title, objectData.articule, objectData.text, {
           image: dataUrl,
           width: 100
         }]);
-
+      
       })
-
+      
       configurator.push(objectData);
 
       if (configurator.length > 1) {
@@ -707,13 +737,14 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
+
         object.userData.id = objectData.id;
         filledPorts.push(object);
 
         if (replacedConnector) {
           currentConnector.object = replacedConnector;
         }
-        
+
         if (currentConnector.object) {
 
           if (replacedConnector) {
@@ -724,11 +755,12 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.parentId = currentConnector.object.userData.parentId;
           object.userData.connectorId = currentConnector.object.userData.id;
           object.userData.children = currentConnector.object.children;
-          object.userData.uuid = currentConnector.object.uuid;
-
+          object.userData.parentUuid = object.scene.uuid;
+          object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
           currentConnector = { object: null };
+          
         }
 
       }
@@ -736,11 +768,14 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       objectPool.push(object);
 
       if (objectData.connectors) {
+        // console.log('connector',connector);
+
+        console.log('objectData.id', objectData.id);
         objectData.connectors.map(connector => createArea(connector, object, objectData.id));
       }
 
       lastInsertObject = object.scene;
-
+      console.log('object ', object);
       return object, lastInsertObject;
     });
   });
@@ -785,12 +820,12 @@ function getCenterPointX(mesh, errorRate) {
 const addPlug = (plug) => {
 
   plug = plug.map((item) => {
-    item.zang_model = zang;
+    item.zang_model = zang; 
     
-    if(item) {
+    if (item) {
       setDetail(item);
     }
-  
+
   })
   // for (let i = 0; i <= plug.length; i++) {
   //   console.log('Port zang', i);
@@ -803,18 +838,17 @@ const setDetail = (detail) => {
   if (currentConnector.object) {
 
     instantiateObject(detail, currentConnector.object.position);
-    
+    console.log('currentConnector', currentConnector)
     scene.remove(currentConnector.object);
   }
 
   if (detail.zang_model) {
     instantiateObject(detail.zang_model, detail.position, detail);
     connectorPool = connectorPool.filter(item => item.uuid !== detail.uuid);
-   
+    console.log('detail.zang_model', detail.zang_model)
     scene.remove(detail);
   }
 
-  // return object;
 };
 
 
@@ -828,10 +862,11 @@ const deleteObject = function (e) {
   //TODO переписать id на uuid
 
   const object = objectPool.find(object => object.scene.uuid === objectuuId);
+  console.log('object', object)
 
   if (object) {
     let recordItem = records.objects.find(item => item.id === object.userData.id);
-
+  
     if (recordItem) {
       const parentObject = records.objects.find(item => item.id === object.userData.parentId);
 
@@ -840,31 +875,40 @@ const deleteObject = function (e) {
 
         if (connector) {
 
-          const parentSceneObject = objectPool.find(object => object.uuid === object.userData.uuid);
-          console.log('parentSceneObject',parentSceneObject)
-          objectPool = objectPool.map((item) => {
-      
-            if (item.uuid == parentSceneObject.scene.userData.parentObjectUuid && parentSceneObject.scene.userData.parentObjectUuid) {
-
-              // scene.remove(item.scene);
-
-            } else {
-              return item;
+          const childrenObject = objectPool.find(children => children.scene.uuid === object.userData.childrenUUid);
+          console.log('childrenObject',childrenObject)
+          const parentSceneObject = objectPool.find(object => object.uuid === object.userData.parentUuid);
+          let childrenListObject = objectPool.map((children) => {
+            
+            if (object.scene.uuid === children.userData.childrenUUid) {
+              objectPool = objectPool.filter(item => item.scene.uuid !== children.userData.childrenUUid);
+              let modal_element =document.querySelector('.row[data-uuid = "'+ (children.userData.childrenUUid +'"]'));
+              modal_element.remove(modal_element);
+              console.log('modal_element',modal_element)
+              scene.remove(children.scene)
             }
-
-          });
-          console.log('connectorPool',connectorPool);
-          let connectorPoolDelete = connectorPool.filter(item =>item.userData.parentUuid ===object.scene.uuid);
-          connectorPoolDelete = connectorPoolDelete.map((item) =>{
-            connectorPool = connectorPool.filter(element => element !== item);
-            scene.remove(item);
           })
+          console.log('objectPool', objectPool);
+          // console.log('connectorPool',connectorPool);
+          let connectorPoolDelete = connectorPool.filter(item => item.userData.parentUuid === object.scene.uuid);
+          connectorPoolDelete = connectorPoolDelete.map((item) => {
+            console.log('connectorPoolDelete',connectorPoolDelete);
+            connectorPool = connectorPool.filter(element => element !== item);
+
+            scene.remove(item);
+          });
       
-          scene.remove(object.scene);
+          objectPool = objectPool.filter(item => item.scene.uuid !== object.scene.uuid);
+          console.log('object',object)
           
+          configurator_list = configurator_list.filter(element => element[1] !== object.scene.uuid);
+          
+          scene.remove(object.scene);
           clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
-          console.log('connector',connector)
-          createArea(connector, parentSceneObject, object.userData.parentId);
+          // console.log('connector delete',connector);
+          console.log('parentSceneObject delete', object);
+          // console.log('object.userData.parentId delete',object.userData.parentId);
+          createArea(connector, childrenObject, object.userData.parentId);
         }
 
       }
@@ -888,27 +932,6 @@ const replaceArea = (event) => {
 
 const setPlugs = () => {
   let connectorZang = connectorPool.filter(item => item.userData.connectorLevel === 1);
-  let objectPoolId = objectPool.map((item) => {
-
-    if (item.userData.connectorId) {
-   
-    }
-
-  });
-
-  // let connectorZangId =connectorPool.filter(item => item);
-
-
-  // if (objectPool.userData) {
-  //   console.log('objectPool.userData',objectPool.userData)
-  // }
-
-  // if (connectorZang.userData.id === objectPool.object.connectorId) {
-  //   console.log('connectorZang.userData.id', connectorZang.userData.id)
-  // }
-
-  // console.log('connectorZangId',connectorZangId)
-  console.log('connectorZang', connectorZang)
   addPlug(connectorZang);
 }
 
@@ -988,8 +1011,9 @@ const createPdfconfigurator = () => {
 
   const pdfItemList = configurator_list.map(item => {
     return [
-      item[1], item[2], item[3], item[4]
+      item[1], item[2], item[3], item[5]
     ]
+    
   });
 
   docInfo.content[1].table.body = pdfItemList;
@@ -998,7 +1022,7 @@ const createPdfconfigurator = () => {
 
 }
 
-const modal_configurator = (id, uuid, title, articule, text, image) => {
+const modal_configurator = (id, uuid,childrenUUid, title, articule, text, image) => {
 
   const row = document.createElement("div");
   row.classList = "row";
@@ -1006,6 +1030,7 @@ const modal_configurator = (id, uuid, title, articule, text, image) => {
   row.style.flexDirection = "row";
   row.style.flexWrap = "nowrap";
   row.style.justifyContent = "space-between";
+  row.dataset.childrenuuid = childrenUUid;
 
   const el_title = document.createElement("div");
   el_title.classList = "col-md-2";
@@ -1031,7 +1056,7 @@ const modal_configurator = (id, uuid, title, articule, text, image) => {
 
   const el_link = document.createElement("button");
   el_link.classList = "btn btn-danger";
-  el_link.dataset.uuid = uuid;
+  el_link.dataset.uuid = uuid
   el_link.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i>";
   el_link.onclick = deleteObject;
 
