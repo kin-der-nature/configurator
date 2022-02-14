@@ -7,7 +7,7 @@ const records = {
     {
       modelName: '1031-0011-A02--ASSY_LM-10G-PxC-20191025.glb',
       image: 'FL SWITCH EP7400 M4TGSFP 1.png',
-      title: 'FL SWITCH EP7400-M4TGSFP',
+      title: 'FL SWITCH EP7400-M4TGSFP -1144388',
       text: 'Текст',
       articule: '1144388',
       dataUrl: '',
@@ -15,40 +15,40 @@ const records = {
       materialName: 'optica_materials.mtl',
       errorRate: { x: 29, y: -34, z: 50 },
       connector_type: 3,
-      connectors: [     //шаг отступа портов 15
-        {
-          id: 1,
-          name: 'back_left_top',
-          scale: { x: 15, y: 12, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -67, y: 34, z: -10 },
-          connector_type: 4
-        },
-        {
-          id: 2,
-          name: 'back_left_bot',
-          scale: { x: 15, y: 12, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -39, y: 34, z: -10 },
-          connector_type: 4
-        },
-        {
-          id: 3,
-          name: 'back_left_bot',
-          scale: { x: 15, y: 12, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -10, y: 34, z: -10 },
-          connector_type: 4
-        },
-        {
-          id: 4,
-          name: 'back_left_bot',
-          scale: { x: 15, y: 12, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 17, y: 34, z: -10 },
-          connector_type: 4
-        }
-      ],
+      // connectors: [     //шаг отступа портов 15
+      //   {
+      //     id: 1,
+      //     name: 'back_left_top',
+      //     scale: { x: 15, y: 12, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -67, y: 34, z: -10 },
+      //     connector_type: 4
+      //   },
+      //   {
+      //     id: 2,
+      //     name: 'back_left_bot',
+      //     scale: { x: 15, y: 12, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -39, y: 34, z: -10 },
+      //     connector_type: 4
+      //   },
+      //   {
+      //     id: 3,
+      //     name: 'back_left_bot',
+      //     scale: { x: 15, y: 12, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -10, y: 34, z: -10 },
+      //     connector_type: 4
+      //   },
+      //   {
+      //     id: 4,
+      //     name: 'back_left_bot',
+      //     scale: { x: 15, y: 12, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 17, y: 34, z: -10 },
+      //     connector_type: 4
+      //   }
+      // ],
     },
     {
       id: 1,
@@ -78,10 +78,11 @@ const records = {
           id: 2,
           name: 'back_left_bot',
           scale: { x: 140, y: 20, z: 100 },
-          errorRate: { x: 0, y: 0, z: 0 },
+          errorRate: { x: -0, y: 0, z: 0 },
           errorRatePort: { x: 4, y: -10, z: 140 },
           connector_type: 1,
           connectorLevel: 1,
+          rotate:true,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
         },
@@ -142,7 +143,7 @@ const records = {
       modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
-      title: 'FL SWITCH EP7400 M8GRJ45',
+      title: 'FL SWITCH EP7400-M8GSFP-1144383',
       text: 'Подробный текст',
       articule: '1144375',
       dataUrl: '',
@@ -231,7 +232,7 @@ const records = {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400-M8GSFP',
+      title: 'FL SWITCH EP7400 M8GRJ45-1144375',
       text: 'Подробный текст',
       articule: '1144383',
       dataUrl: '',
@@ -320,7 +321,7 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400-PS-HV',
+      title: 'FL SWITCH EP7400-PS-HV-1144175',
       articule: '1144175',
       dataUrl: '',
       text: 'Подробный текст',
@@ -333,7 +334,7 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400-PS-LV',
+      title: 'FL SWITCH EP7400-PS-LV-1144367',
       articule: '1144367',
       dataUrl: '',
       text: 'Подробный текст',
@@ -346,7 +347,7 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400-PS-MV',
+      title: 'FL SWITCH EP7400-PS-MV-1144372',
       articule: '1144372',
       dataUrl: '',
       text: 'Подробный текст',
@@ -360,7 +361,7 @@ const records = {
       materialName: 'materials.mtl',
       articule: 'Артикул 5',
       dataUrl: '',
-      image: 'Оптичeский модуль.png',
+      image: 'Оптический модуль.png',
       title: 'Оптический модуль',
       text: 'Подробный текст',
       errorRate: { x: 4, y: 6, z: -38 },
@@ -373,7 +374,7 @@ const records = {
       materialName: 'materials.mtl',
       articule: 'Артикул 5',
       dataUrl: '',
-      image: 'Медный модуль.png',
+      image: 'Медный_модуль.png',
       title: 'Медный модуль',
       text: 'Подробный текст',
       errorRate: { x: 1, y: 6, z: -45 },
@@ -384,7 +385,7 @@ const records = {
     {
       modelName: 'Заглушка EP 7400.glb',
       materialName: 'materials.mtl',
-      articule: 'Артикул 5',
+      articule: '1144428',
       dataUrl: '',
       image: 'Заглушка.png',
       title: 'Заглушка',
@@ -444,6 +445,7 @@ let connectorPool = [];
 let currentobject;
 let configurator = [];
 let configurator_list = [];
+let object_status = true;
 let configurator_table = document.querySelector('.configurator-table')
 let positionGreenX = document.querySelector('.positionX');
 // const camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, far);
@@ -500,10 +502,11 @@ const objectOpacity = (object, opacity) => {
 const setCurrentConnector = (newCurrentConnector) => {
 
   if (currentConnector.object) {
-
+   
     objectOpacity(currentConnector.object, 1);
     currentConnector = { object: null };
   }
+  object_status = true;
   currentConnector = newCurrentConnector;
   objectOpacity(currentConnector.object, 0.1)
 }
@@ -565,8 +568,9 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.name = connector.name;
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
-  console.log('mesh.userData.parentUuid', mesh.userData.parentUuid)
-  // console.log('mesh.position',mesh.position)
+  mesh.userData.rotate =connector.rotate;
+  console.log('mesh.userData.parentUuid', mesh.userData.parentUuid);
+  console.log('mesh.position',connector)
   getCenterPoint(mesh)
   connectorPool.push(mesh);
 
@@ -674,27 +678,24 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
     objLoader.load(objectData.modelName, function (object) {
       let modelObject = currentConnector.object;
-      
+
       scene.add(object.scene);
-      
-      // objectData.uuid = object.scene.uuid;
+
       object.scene.position.copy(position);
       objectData.position = object.scene.children[0].children[0].position;
       objectData.uuid = object.scene.uuid;
-      
+      objectData.childrenuuid = object.userData.childrenUUid;
       configurator.push(objectData);
-    
-        console.log('objectData.childrenUUidModel',objectData.childrenUUidModel)
-        configurator_table.append(modal_configurator(objectData.id, objectData.uuid,objectData.childrenUUidModel, objectData.title, objectData.articule, objectData.text, objectData.image));
-        toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+     
+      toDataURL('assets/images/' + objectData.image, function (dataUrl) {
 
-        configurator_list.push([objectData.id, objectData.uuid, objectData.title, objectData.articule, objectData.text, {
+        configurator_list.push([objectData.id, objectData.title, objectData.articule, objectData.text, {
           image: dataUrl,
           width: 100
         }]);
-      
+
       })
-      
+
       configurator.push(objectData);
 
       if (configurator.length > 1) {
@@ -720,7 +721,12 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         if (objectData.modelName === 'Медный модуль.glb') {
           new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
           object.scene.children[0].children[0].rotation.z = -7.85;
+          
         }
+
+      
+
+        if(objectData)
         // object.userData = {
         //   connectorId: currentConnector.object.userData.id,
         //   parentId: currentConnector.object.userData.parentId,
@@ -733,7 +739,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
         object.userData.errorRate = objectData.errorRate;
         object.userData.connectorLevel = objectData.connectorLevel;
-        objectData.uuid = object.scene.uuid;
 
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
@@ -757,25 +762,38 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.children = currentConnector.object.children;
           object.userData.parentUuid = object.scene.uuid;
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
+          objectData.rotate = currentConnector.object.userData.rotate;
+          // console.log('objectData.rotate',objectData.rotate)
+          
+          if(objectData.rotate) {
+            console.log('objectData.rotate',objectData.rotate);
+            // new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
+            var box = new THREE.Box3().setFromObject( object.scene.children[0].children[0] );
+            console.log('box.getsize',box.max.x + box.min.x);
+            let objectSize = box.max.x + box.min.x;
+            object.scene.children[0].children[0].rotation.z = (3.14 / 2) * 2;
+            object.scene.position.x = 173;
+          }
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
           currentConnector = { object: null };
-          
+
         }
 
       }
-
+      console.log(' object.userData.childrenUUid',  object.userData.childrenUUid)
+      configurator_table.append(modal_configurator(objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
 
       if (objectData.connectors) {
         // console.log('connector',connector);
-
         console.log('objectData.id', objectData.id);
         objectData.connectors.map(connector => createArea(connector, object, objectData.id));
       }
-
+      
       lastInsertObject = object.scene;
       console.log('object ', object);
+      
       return object, lastInsertObject;
     });
   });
@@ -820,8 +838,8 @@ function getCenterPointX(mesh, errorRate) {
 const addPlug = (plug) => {
 
   plug = plug.map((item) => {
-    item.zang_model = zang; 
-    
+    item.zang_model = zang;
+
     if (item) {
       setDetail(item);
     }
@@ -866,7 +884,7 @@ const deleteObject = function (e) {
 
   if (object) {
     let recordItem = records.objects.find(item => item.id === object.userData.id);
-  
+
     if (recordItem) {
       const parentObject = records.objects.find(item => item.id === object.userData.parentId);
 
@@ -876,14 +894,16 @@ const deleteObject = function (e) {
         if (connector) {
 
           const childrenObject = objectPool.find(children => children.scene.uuid === object.userData.childrenUUid);
-          console.log('childrenObject',childrenObject)
+          console.log('childrenObject', childrenObject)
           const parentSceneObject = objectPool.find(object => object.uuid === object.userData.parentUuid);
           let childrenListObject = objectPool.map((children) => {
-            
+
             if (object.scene.uuid === children.userData.childrenUUid) {
               objectPool = objectPool.filter(item => item.scene.uuid !== children.userData.childrenUUid);
-              let modal_element =document.querySelector('.row[data-uuid = "'+ (children.userData.childrenUUid +'"]'));
+              let modal_element =document.querySelector('.row[data-childrenuuid = "'+ (children.userData.childrenUUid +'"]'));
               modal_element.remove(modal_element);
+              configurator_list = configurator_list.filter(element => element[1] !== children.scene.uuid);
+       
               console.log('modal_element',modal_element)
               scene.remove(children.scene)
             }
@@ -892,17 +912,17 @@ const deleteObject = function (e) {
           // console.log('connectorPool',connectorPool);
           let connectorPoolDelete = connectorPool.filter(item => item.userData.parentUuid === object.scene.uuid);
           connectorPoolDelete = connectorPoolDelete.map((item) => {
-            console.log('connectorPoolDelete',connectorPoolDelete);
+            console.log('connectorPoolDelete', connectorPoolDelete);
             connectorPool = connectorPool.filter(element => element !== item);
-
+            // connectorPool = connectorPool.filter(element => element.scene.uuid !==item.userData.childrenUuid)
             scene.remove(item);
           });
-      
+
           objectPool = objectPool.filter(item => item.scene.uuid !== object.scene.uuid);
-          console.log('object',object)
-          
+          console.log('object', object)
+
           configurator_list = configurator_list.filter(element => element[1] !== object.scene.uuid);
-          
+        
           scene.remove(object.scene);
           clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
           // console.log('connector delete',connector);
@@ -921,13 +941,22 @@ const deleteObject = function (e) {
 const replaceArea = (event) => {
 
   object = records.objects.find(item => item.id == event.target.dataset.modelId);
+  
 
-  if (object) {
+  if(object_status) {
+    object_status = false;
+    console.log('click object')
+    console.log('object_status',object_status)
 
-    setDetail(object);
-  } else {
+    if (object) {
 
+      setDetail(object);
+    } else {
+  
+    }
   }
+
+ 
 }
 
 const setPlugs = () => {
@@ -957,7 +986,7 @@ var docInfo = {
 
   pageSize: 'A4',
   pageOrientation: 'landscape',//'portrait'
-  pageMargins: [50, 50, 30, 60],
+  pageMargins: [80, 20, 80, 60],
 
   header: function (currentPage, pageCount) {
     return {
@@ -967,20 +996,13 @@ var docInfo = {
     }
   },
 
-  footer: [
-    {
-      text: 'нижний колонтитул',
-      alignment: 'center',//left  right
-    }
-  ],
-
   content: [
 
     {
       text: 'Ваша конфигурация',
       fontSize: 20,
       alignment: 'center',
-      margin: [0, 200, 70, 50]
+      margin: [0, 0, 0, 50]
       //pageBreak:'after'
     },
 
@@ -988,7 +1010,7 @@ var docInfo = {
       table: {
         widths: ['*', '*', 100, 150],
         body: [
-
+            
         ],
         headerRows: 0
       }
@@ -1011,9 +1033,9 @@ const createPdfconfigurator = () => {
 
   const pdfItemList = configurator_list.map(item => {
     return [
-      item[1], item[2], item[3], item[5]
+      item[1], item[2], item[3], item[4]
     ]
-    
+
   });
 
   docInfo.content[1].table.body = pdfItemList;
@@ -1022,7 +1044,7 @@ const createPdfconfigurator = () => {
 
 }
 
-const modal_configurator = (id, uuid,childrenUUid, title, articule, text, image) => {
+const modal_configurator = (id, uuid, childrenUUid, title, articule, text, image) => {
 
   const row = document.createElement("div");
   row.classList = "row";
