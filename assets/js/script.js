@@ -78,11 +78,10 @@ const records = {
           id: 2,
           name: 'back_left_bot',
           scale: { x: 140, y: 20, z: 100 },
-          errorRate: { x: -0, y: 0, z: 0 },
+          errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 4, y: -10, z: 140 },
-          connector_type: 1,
-          connectorLevel: 1,
-          rotate:true,
+          connector_type: 5,
+          connectorLevel: 5,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
         },
@@ -149,14 +148,106 @@ const records = {
       dataUrl: '',
       id: 3,
       position: { x: 0, y: 0, z: 0 },
-      errorRate: { x: 90, y: 8, z: 55 },
+      
+      errorRate: { x: -82, y: -10, z: 55 },
       connectors: [     //шаг отступа портов 14.5
         {
           id: 1,
           name: 'back_left_top',
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -137, y: -8, z: -15 },
+          errorRatePort: { x: 35, y: 8, z: -15 },
+          connector_type: 4,
+
+
+        },
+        {
+          id: 2,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 49.5, y: 8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 3,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 64, y: 8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 4,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 78, y: 8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 5,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 94, y: 8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 6,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 108, y: 8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 7,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 122.5, y: 8, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+        {
+          id: 8,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 137, y: 8, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+
+      ],
+      connector_type: 1,
+    },
+
+    {
+      modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
+      materialName: 'optica_materials.mtl',
+      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      title: 'FL SWITCH EP7400-M8GSFP-1144383',
+      text: 'Подробный текст',
+      articule: '1144375',
+      dataUrl: '',
+      id: 3,
+      position: { x: 0, y: 0, z: 0 },
+      rotate: { x: 90, y: 45, z: 10 },
+      errorRate: { x: 90, y: 108, z: 55 },
+      connectors: [     //шаг отступа портов 14.5
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 0, y: 100, z: -15 },
           connector_type: 4,
 
 
@@ -226,8 +317,99 @@ const records = {
         },
 
       ],
+      connector_type: 5,
+    },
+    {
+      modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
+      materialName: 'optica_materials.mtl',
+      image: 'FL SWITCH EP7400 M8GSFP 2.png',
+      title: 'FL SWITCH EP7400 M8GRJ45-1144375 vavawfg',
+      text: 'Подробный текст',
+      articule: '1144383',
+      dataUrl: '',
+      id: 4,
+      position: { x: 0, y: 0, z: 0 },
+      rotate: { x: 90, y: 45, z: 10 },
+      errorRate: { x: -70, y: 8, z: 55 },
+      connectors: [     //шаг отступа портов 15
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 124, y: -8, z: 15 },
+          connector_type: 4,
+
+
+        },
+        {
+          id: 2,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 108, y: -8, z: 15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 3,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 95, y: 10, z: 15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 4,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 80, y: -8, z: 15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 5,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 65, y: -8, z: 15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 6,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 50, y: -8, z: 15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 7,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 35, y: -8, z: 15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+        {
+          id: 8,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 20, y: -8, z: 15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+
+      ],
       connector_type: 1,
     },
+
     {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
@@ -315,8 +497,9 @@ const records = {
         },
 
       ],
-      connector_type: 1,
+      connector_type: 5,
     },
+
     {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
@@ -402,7 +585,9 @@ let mainObjectCenter;
 let model_decriptions_info;
 let replaceId;
 let filledPorts = [];
-let clearPorts = []
+let clearPorts = [];
+let objectRotateEl = [];
+let objectRotateTest = []
 const scene = new THREE.Scene();
 const canvas = document.querySelector('#canvas');
 const camera = new THREE.PerspectiveCamera(100, canvas.width / canvas.height, 10, 1000);
@@ -539,9 +724,7 @@ function onclick(event) {
     // addObject();
     // scene.remove(intersects[0].object.parent);
   }
-
 }
-
 
 const createArea = (connector, object, objectId) => {
   let geometry = new THREE.BoxGeometry();
@@ -568,7 +751,8 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.name = connector.name;
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
-  mesh.userData.rotate =connector.rotate;
+  mesh.userData.rotateId =connector.rotateId;
+  mesh.userData.connector_type =connector.connector_type;
   console.log('mesh.userData.parentUuid', mesh.userData.parentUuid);
   console.log('mesh.position',connector)
   getCenterPoint(mesh)
@@ -743,6 +927,11 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
 
+        if(objectData.rotate){
+          console.log('objectData.rotate', objectData.rotate);
+          object.scene.rotation.set(0,0,3.14);
+        }
+
         object.userData.id = objectData.id;
         filledPorts.push(object);
 
@@ -759,21 +948,15 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           }
           object.userData.parentId = currentConnector.object.userData.parentId;
           object.userData.connectorId = currentConnector.object.userData.id;
+          
           object.userData.children = currentConnector.object.children;
           object.userData.parentUuid = object.scene.uuid;
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
-          objectData.rotate = currentConnector.object.userData.rotate;
+          object.userData.connector_type = currentConnector.object.userData.connector_type;
+          objectData.rotate = currentConnector.object.userData.rotateId;
           // console.log('objectData.rotate',objectData.rotate)
           
-          if(objectData.rotate) {
-            console.log('objectData.rotate',objectData.rotate);
-            // new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
-            var box = new THREE.Box3().setFromObject( object.scene.children[0].children[0] );
-            console.log('box.getsize',box.max.x + box.min.x);
-            let objectSize = box.max.x + box.min.x;
-            object.scene.children[0].children[0].rotation.z = (3.14 / 2) * 2;
-            object.scene.position.x = 173;
-          }
+          
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
           currentConnector = { object: null };
@@ -781,10 +964,54 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         }
 
       }
+
+      
       console.log(' object.userData.childrenUUid',  object.userData.childrenUUid)
       configurator_table.append(modal_configurator(objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
 
+    
+
+      if(objectData.rotate) {
+      
+        objectRotate = objectData.rotate.map( (id) => {
+    
+          objectRotateEl = objectPool.map((object_element) =>{
+            
+            if(object_element.userData.id === id){
+              objectRotateTest.push(object_element);
+            }
+          
+          });
+
+        });
+        // objectRotateTest = objectRotateTest.map((item) => {
+        //   object.scene.children[0].children[0].rotation.z = (3.14 / 2) * 2;
+
+        //   if(item.userData.id === 3) {
+        //     item.scene.position.x = -76;
+        //     item.scene.position.y = -17;
+        //   }
+
+        //   if(item.userData.id === 4) {
+        //     item.scene.position.x = -66
+        //   }
+         
+        // })
+        // objectRotateEl = objectRotateEl.map( (item) =>{
+        //   console.log('objectRotate',item)
+        //   item.scene.position.x = -76
+        // })
+        
+        console.log('objectData.rotate',objectData.rotate);
+        // new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
+        var box = new THREE.Box3().setFromObject( object.scene.children[0].children[0] );
+        console.log('box.getsize',box.max.x + box.min.x);
+        let objectSize = box.max.x + box.min.x;
+       
+        // object.scene.position.x = -76;
+      }
+     
       if (objectData.connectors) {
         // console.log('connector',connector);
         console.log('objectData.id', objectData.id);
