@@ -50,6 +50,7 @@ const records = {
       //   }
       // ],
     },
+
     {
       id: 1,
       modelName: 'model_test.glb',
@@ -81,7 +82,7 @@ const records = {
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 4, y: -10, z: 140 },
           connector_type: 5,
-          connectorLevel: 5,
+          connectorLevel: 1,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
         },
@@ -103,7 +104,7 @@ const records = {
           position: { x: 150, y: -10, z: 130 },
           errorRate: { x: -8, y: 0, z: 0 },
           errorRatePort: { x: 150, y: -10, z: 140 },
-          connector_type: 1,
+          connector_type: 5,
           connectorLevel: 1,
           modelName: 'Заглушка EP 7400.glb',
           materialName: 'materials.mtl'
@@ -144,12 +145,103 @@ const records = {
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
       title: 'FL SWITCH EP7400-M8GSFP-1144383',
       text: 'Подробный текст',
-      articule: '1144375',
+      articule: '1144383',
       dataUrl: '',
       id: 3,
       position: { x: 0, y: 0, z: 0 },
-      
-      errorRate: { x: -82, y: -10, z: 55 },
+      errorRate: { x: 90, y: 8, z: 55 },
+
+      connectors: [     //шаг отступа портов 14.5
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -35, y: -8, z: -15 },
+          connector_type: 4,
+
+
+        },
+        {
+          id: 2,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -49.5, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 3,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -64, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 4,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -78, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 5,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -94, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 6,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -108, y: -8, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 7,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -122.5, y: -8, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+        {
+          id: 8,
+          name: 'back_left_bot',
+          scale: { x: 14, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -137, y: -8, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+
+      ],
+      connector_type: 1,
+    },
+
+    {
+      modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
+      materialName: 'optica_materials.mtl',
+      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
+      title: 'FL SWITCH EP7400-M8GSFP-1144383 ',
+      text: 'Подробный текст',
+      articule: '1144383',
+      dataUrl: '',
+      id: 4,
+      position: { x: 0, y: 0, z: 0 },
+      errorRate: { x: -82, y: -10, z: 53 },
+      rotate:{x: 90,y: 50,z: 55},
       connectors: [     //шаг отступа портов 14.5
         {
           id: 1,
@@ -226,208 +318,26 @@ const records = {
         },
 
       ],
-      connector_type: 1,
-    },
-
-    {
-      modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
-      materialName: 'optica_materials.mtl',
-      image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
-      title: 'FL SWITCH EP7400-M8GSFP-1144383',
-      text: 'Подробный текст',
-      articule: '1144375',
-      dataUrl: '',
-      id: 3,
-      position: { x: 0, y: 0, z: 0 },
-      rotate: { x: 90, y: 45, z: 10 },
-      errorRate: { x: 90, y: 108, z: 55 },
-      connectors: [     //шаг отступа портов 14.5
-        {
-          id: 1,
-          name: 'back_left_top',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 0, y: 100, z: -15 },
-          connector_type: 4,
-
-
-        },
-        {
-          id: 2,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -122.5, y: -8, z: -15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 3,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -108.5, y: -8, z: -15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 4,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -94, y: -8, z: -15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 5,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -78, y: -8, z: -15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 6,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -64, y: -8, z: -15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 7,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -49.5, y: -8, z: -15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
-        {
-          id: 8,
-          name: 'back_left_bot',
-          scale: { x: 14, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -35, y: -8, z: -15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
-
-      ],
       connector_type: 5,
     },
     {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400 M8GRJ45-1144375 vavawfg',
-      text: 'Подробный текст',
-      articule: '1144383',
-      dataUrl: '',
-      id: 4,
-      position: { x: 0, y: 0, z: 0 },
-      rotate: { x: 90, y: 45, z: 10 },
-      errorRate: { x: -70, y: 8, z: 55 },
-      connectors: [     //шаг отступа портов 15
-        {
-          id: 1,
-          name: 'back_left_top',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 124, y: -8, z: 15 },
-          connector_type: 4,
-
-
-        },
-        {
-          id: 2,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 108, y: -8, z: 15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 3,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 95, y: 10, z: 15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 4,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 80, y: -8, z: 15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 5,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 65, y: -8, z: 15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 6,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 50, y: -8, z: 15 },
-          connector_type: 4,
-
-        },
-        {
-          id: 7,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 35, y: -8, z: 15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
-        {
-          id: 8,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 20, y: -8, z: 15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
-
-      ],
-      connector_type: 1,
-    },
-
-    {
-      modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
-      materialName: 'optica_materials.mtl',
-      image: 'FL SWITCH EP7400 M8GSFP 2.png',
       title: 'FL SWITCH EP7400 M8GRJ45-1144375',
       text: 'Подробный текст',
-      articule: '1144383',
+      articule: '1144375',
       dataUrl: '',
-      id: 4,
+      id: 5,
       position: { x: 0, y: 0, z: 0 },
-      errorRate: { x: 78, y: -10, z: 60 },
+      errorRate: { x: 78, y: -10, z: 55 },
       connectors: [     //шаг отступа портов 15
         {
           id: 1,
           name: 'back_left_top',
           scale: { x: 10, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -122, y: 10, z: -15 },
+          errorRatePort: { x: -124, y: 10, z: -15 },
           connector_type: 4,
 
 
@@ -497,6 +407,97 @@ const records = {
         },
 
       ],
+      connector_type: 1,
+    },
+
+    {
+      modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
+      materialName: 'optica_materials.mtl',
+      image: 'FL SWITCH EP7400 M8GSFP 2.png',
+      title: 'FL SWITCH EP7400 M8GRJ45-1144375',
+      text: 'Подробный текст',
+      articule: '1144375',
+      dataUrl: '',
+      id: 6,
+      position: { x: 0, y: 0, z: 0 },
+      rotate:{x: 90,y: 50,z: 55},
+      errorRate: { x: -67, y: 8, z: 57 },
+      connectors: [     //шаг отступа портов 15
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 20, y: -10, z: -15 },
+          connector_type: 4,
+
+
+        },
+        {
+          id: 2,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 35, y: -10, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 3,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 50, y: -10, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 4,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 63, y: -10, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 5,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 83, y: -10, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 6,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 100, y: -10, z: -15 },
+          connector_type: 4,
+
+        },
+        {
+          id: 7,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 110, y: -10, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+        {
+          id: 8,
+          name: 'back_left_bot',
+          scale: { x: 10, y: 10, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 123, y: -10, z: -15 },
+          connector_type: 4,
+          // connectorLevel = 2,
+        },
+
+      ],
       connector_type: 5,
     },
 
@@ -510,7 +511,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
-      id: 5,
+      id: 7,
       connector_type: 2,
     },
     {
@@ -523,7 +524,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
-      id: 6,
+      id: 8,
       connector_type: 2,
     },
     {
@@ -536,7 +537,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
-      id: 7,
+      id: 9,
       connector_type: 2,
     },
     {
@@ -549,7 +550,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 4, y: 6, z: -38 },
 
-      id: 8,
+      id: 10,
       connector_type: 4,
     },
     {
@@ -562,7 +563,7 @@ const records = {
       text: 'Подробный текст',
       errorRate: { x: 1, y: 6, z: -45 },
 
-      id: 9,
+      id: 11,
       connector_type: 4,
     },
     {
@@ -574,7 +575,7 @@ const records = {
       title: 'Заглушка',
       text: 'Подробный текст',
       errorRate: { x: 78, y: -10, z: 60 },
-      id: 10,
+      id: 12,
     },
   ]
 };
@@ -638,7 +639,7 @@ camera.position.set(0, 0.05, 400);
 const zeroPosition = new THREE.Vector3(0, 0, 0);
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
-let zang = records.objects.find(object => object.id === 10);
+let zang = records.objects.find(object => object.id === 12);
 let lastInsertObject;
 
 function onMouseMove(event) {
@@ -691,9 +692,10 @@ const setCurrentConnector = (newCurrentConnector) => {
     objectOpacity(currentConnector.object, 1);
     currentConnector = { object: null };
   }
-  object_status = true;
+
   currentConnector = newCurrentConnector;
-  objectOpacity(currentConnector.object, 0.1)
+  objectOpacity(currentConnector.object, 0.1);
+  object_status = true;
 }
 
 function onclick(event) {
@@ -873,7 +875,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
      
       toDataURL('assets/images/' + objectData.image, function (dataUrl) {
 
-        configurator_list.push([objectData.id, objectData.title, objectData.articule, objectData.text, {
+        configurator_list.push([objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
           image: dataUrl,
           width: 100
         }]);
@@ -1148,6 +1150,7 @@ const deleteObject = function (e) {
           objectPool = objectPool.filter(item => item.scene.uuid !== object.scene.uuid);
           console.log('object', object)
 
+          console.log('object.scene.uuid',object.scene.uuid)
           configurator_list = configurator_list.filter(element => element[1] !== object.scene.uuid);
         
           scene.remove(object.scene);
@@ -1235,7 +1238,7 @@ var docInfo = {
 
     {
       table: {
-        widths: ['*', '*', 100, 150],
+        widths: [200, 70,'*', 150],
         body: [
             
         ],
@@ -1260,7 +1263,7 @@ const createPdfconfigurator = () => {
 
   const pdfItemList = configurator_list.map(item => {
     return [
-      item[1], item[2], item[3], item[4]
+      item[2], item[3], item[4], item[5]
     ]
 
   });
