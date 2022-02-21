@@ -15,40 +15,40 @@ const records = {
       materialName: 'optica_materials.mtl',
       errorRate: { x: 29, y: -34, z: 50 },
       connector_type: 3,
-      // connectors: [     //шаг отступа портов 15
-      //   {
-      //     id: 1,
-      //     name: 'back_left_top',
-      //     scale: { x: 15, y: 12, z: 20 },
-      //     errorRate: { x: 0, y: 0, z: 0 },
-      //     errorRatePort: { x: -67, y: 34, z: -10 },
-      //     connector_type: 4
-      //   },
-      //   {
-      //     id: 2,
-      //     name: 'back_left_bot',
-      //     scale: { x: 15, y: 12, z: 20 },
-      //     errorRate: { x: 0, y: 0, z: 0 },
-      //     errorRatePort: { x: -39, y: 34, z: -10 },
-      //     connector_type: 4
-      //   },
-      //   {
-      //     id: 3,
-      //     name: 'back_left_bot',
-      //     scale: { x: 15, y: 12, z: 20 },
-      //     errorRate: { x: 0, y: 0, z: 0 },
-      //     errorRatePort: { x: -10, y: 34, z: -10 },
-      //     connector_type: 4
-      //   },
-      //   {
-      //     id: 4,
-      //     name: 'back_left_bot',
-      //     scale: { x: 15, y: 12, z: 20 },
-      //     errorRate: { x: 0, y: 0, z: 0 },
-      //     errorRatePort: { x: 17, y: 34, z: -10 },
-      //     connector_type: 4
-      //   }
-      // ],
+      connectors: [     //шаг отступа портов 15
+        {
+          id: 1,
+          name: 'back_left_top',
+          scale: { x: 15, y: 12, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -67, y: 34, z: -10 },
+          connector_type: 4
+        },
+        {
+          id: 2,
+          name: 'back_left_bot',
+          scale: { x: 15, y: 12, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -39, y: 34, z: -10 },
+          connector_type: 4
+        },
+        {
+          id: 3,
+          name: 'back_left_bot',
+          scale: { x: 15, y: 12, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: -10, y: 34, z: -10 },
+          connector_type: 4
+        },
+        {
+          id: 4,
+          name: 'back_left_bot',
+          scale: { x: 15, y: 12, z: 20 },
+          errorRate: { x: 0, y: 0, z: 0 },
+          errorRatePort: { x: 17, y: 34, z: -10 },
+          connector_type: 4
+        }
+      ],
     },
 
     {
@@ -324,89 +324,89 @@ const records = {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400 M8GRJ45-1144375',
+      title: 'FL SWITCH EP7400-M8GRJ45-1144375',
       text: 'Подробный текст',
       articule: '1144375',
       dataUrl: '',
       id: 5,
       position: { x: 0, y: 0, z: 0 },
       errorRate: { x: 78, y: -10, z: 55 },
-      connectors: [     //шаг отступа портов 15
-        {
-          id: 1,
-          name: 'back_left_top',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -124, y: 10, z: -15 },
-          connector_type: 4,
+      // connectors: [     //шаг отступа портов 15
+      //   {
+      //     id: 1,
+      //     name: 'back_left_top',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -124, y: 10, z: -15 },
+      //     connector_type: 4,
 
 
-        },
-        {
-          id: 2,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -108, y: 10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 2,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -108, y: 10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 3,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -95, y: 10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 3,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -95, y: 10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 4,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -80, y: 10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 4,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -80, y: 10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 5,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -65, y: 10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 5,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -65, y: 10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 6,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -50, y: 10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 6,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -50, y: 10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 7,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -35, y: 10, z: -15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
-        {
-          id: 8,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: -20, y: 10, z: -15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
+      //   },
+      //   {
+      //     id: 7,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -35, y: 10, z: -15 },
+      //     connector_type: 4,
+      //     // connectorLevel = 2,
+      //   },
+      //   {
+      //     id: 8,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: -20, y: 10, z: -15 },
+      //     connector_type: 4,
+      //     // connectorLevel = 2,
+      //   },
 
-      ],
+      // ],
       connector_type: 1,
     },
 
@@ -414,7 +414,7 @@ const records = {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400 M8GRJ45-1144375',
+      title: 'FL SWITCH EP7400-M8GRJ45-1144375',
       text: 'Подробный текст',
       articule: '1144375',
       dataUrl: '',
@@ -422,82 +422,82 @@ const records = {
       position: { x: 0, y: 0, z: 0 },
       rotate:{x: 90,y: 50,z: 55},
       errorRate: { x: -67, y: 8, z: 57 },
-      connectors: [     //шаг отступа портов 15
-        {
-          id: 1,
-          name: 'back_left_top',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 20, y: -10, z: -15 },
-          connector_type: 4,
+      // connectors: [     //шаг отступа портов 15
+      //   {
+      //     id: 1,
+      //     name: 'back_left_top',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 20, y: -10, z: -15 },
+      //     connector_type: 4,
 
 
-        },
-        {
-          id: 2,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 35, y: -10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 2,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 35, y: -10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 3,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 50, y: -10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 3,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 50, y: -10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 4,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 63, y: -10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 4,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 63, y: -10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 5,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 83, y: -10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 5,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 83, y: -10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 6,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 100, y: -10, z: -15 },
-          connector_type: 4,
+      //   },
+      //   {
+      //     id: 6,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 100, y: -10, z: -15 },
+      //     connector_type: 4,
 
-        },
-        {
-          id: 7,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 110, y: -10, z: -15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
-        {
-          id: 8,
-          name: 'back_left_bot',
-          scale: { x: 10, y: 10, z: 20 },
-          errorRate: { x: 0, y: 0, z: 0 },
-          errorRatePort: { x: 123, y: -10, z: -15 },
-          connector_type: 4,
-          // connectorLevel = 2,
-        },
+      //   },
+      //   {
+      //     id: 7,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 110, y: -10, z: -15 },
+      //     connector_type: 4,
+      //     // connectorLevel = 2,
+      //   },
+      //   {
+      //     id: 8,
+      //     name: 'back_left_bot',
+      //     scale: { x: 10, y: 10, z: 20 },
+      //     errorRate: { x: 0, y: 0, z: 0 },
+      //     errorRatePort: { x: 123, y: -10, z: -15 },
+      //     connector_type: 4,
+      //     // connectorLevel = 2,
+      //   },
 
-      ],
+      // ],
       connector_type: 5,
     },
 
@@ -587,8 +587,7 @@ let model_decriptions_info;
 let replaceId;
 let filledPorts = [];
 let clearPorts = [];
-let objectRotateEl = [];
-let objectRotateTest = []
+
 const scene = new THREE.Scene();
 const canvas = document.querySelector('#canvas');
 const camera = new THREE.PerspectiveCamera(100, canvas.width / canvas.height, 10, 1000);
@@ -627,6 +626,7 @@ const coordTest = 0.01;
 let objectPool = [];
 let model_return = document.querySelector('.configurator_block');
 const configurator_modal = document.querySelector('.configurator-modal');
+const loader = document.querySelector('.loader-section');
 let connectorPool = [];
 let currentobject;
 let configurator = [];
@@ -642,14 +642,16 @@ const configurator_button_list = document.querySelector("#btn-sania");
 let zang = records.objects.find(object => object.id === 12);
 let lastInsertObject;
 
-function onMouseMove(event) {
+console.log('window.innerHeight',window.innerHeight)
 
+function onMouseMove(event) {
+  
   mouse.x = ((event.clientX - canvasPosition.x) / canvasPosition.width) * 2 - 1;
   mouse.y = -((event.clientY - canvasPosition.y) / canvasPosition.height) * 2 + 1;
   raycaster.setFromCamera(mouse, camera);
   let intersects = raycaster.intersectObjects(connectorPool);
 
-  if (intersects.length > 0) {
+  if (intersects.length > 0 && currentConnector) {
     const firstIntersectObject = intersects[0].object;
 
     if (firstIntersectObject !== currentConnector) {
@@ -695,21 +697,21 @@ const setCurrentConnector = (newCurrentConnector) => {
 
   currentConnector = newCurrentConnector;
   objectOpacity(currentConnector.object, 0.1);
-  object_status = true;
+  
 }
 
 function onclick(event) {
   raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObjects(scene.children, true);
 
-  if (intersects.length && intersects[0].object.userData.type) {
+  if (intersects.length && intersects[0].object.userData.type && currentConnector) {
 
     objectOpacity(focusObject, 0.5);
     let availableObjects = records.objects.filter(object => object.connector_type === intersects[0].object.userData.type);
     setCurrentConnector(intersects[0]);
     currentConnector = intersects[0];
     objectOpacity(currentConnector.object, 0.5);
-
+    object_status = true;
     if (availableObjects.length > 0) {
 
       model_return.innerHTML = '';
@@ -753,16 +755,12 @@ const createArea = (connector, object, objectId) => {
   mesh.userData.name = connector.name;
   mesh.userData.parentUuid = object.scene.uuid;
   mesh.userData.connectorLevel = connector.connectorLevel;
-  mesh.userData.rotateId =connector.rotateId;
+  mesh.userData.rotateId = connector.rotate;
   mesh.userData.connector_type =connector.connector_type;
-  console.log('mesh.userData.parentUuid', mesh.userData.parentUuid);
-  console.log('mesh.position',connector)
   getCenterPoint(mesh)
   connectorPool.push(mesh);
 
 }
-
-
 
 function main() {
   {
@@ -782,8 +780,6 @@ function main() {
 
   mainObjectData = records.objects.find(object => object.id === 1);
   instantiateObject(mainObjectData);
-
-
 
   function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
@@ -851,7 +847,7 @@ let rotete_test = () => {
 }
 
 const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), replacedConnector = null) => {
-
+  
   const mtlLoader = new THREE.MTLLoader();
   const dracoLoader = new THREE.DRACOLoader();
   dracoLoader.setPath('draco/gltf/');
@@ -866,7 +862,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       let modelObject = currentConnector.object;
 
       scene.add(object.scene);
-
+     
       object.scene.position.copy(position);
       objectData.position = object.scene.children[0].children[0].position;
       objectData.uuid = object.scene.uuid;
@@ -925,14 +921,15 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
         object.userData.errorRate = objectData.errorRate;
         object.userData.connectorLevel = objectData.connectorLevel;
-
+        object.userData.rotate = objectData.rotate;
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
 
-        if(objectData.rotate){
-          console.log('objectData.rotate', objectData.rotate);
-          object.scene.rotation.set(0,0,3.14);
-        }
+      console.log('objectDat egweg3t',objectData)
+      if(objectData.rotate){
+        console.log('objectData.rotate', objectData.rotate);
+        object.scene.rotation.set(0,0,3.14);
+      }
 
         object.userData.id = objectData.id;
         filledPorts.push(object);
@@ -955,13 +952,14 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.parentUuid = object.scene.uuid;
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
           object.userData.connector_type = currentConnector.object.userData.connector_type;
-          objectData.rotate = currentConnector.object.userData.rotateId;
+          // objectData.rotate = currentConnector.object.userData.rotateId;
           // console.log('objectData.rotate',objectData.rotate)
           
           
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
-          currentConnector = { object: null };
+          
+        
 
         }
 
@@ -972,48 +970,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       configurator_table.append(modal_configurator(objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
 
-    
-
-      if(objectData.rotate) {
-      
-        objectRotate = objectData.rotate.map( (id) => {
-    
-          objectRotateEl = objectPool.map((object_element) =>{
-            
-            if(object_element.userData.id === id){
-              objectRotateTest.push(object_element);
-            }
-          
-          });
-
-        });
-        // objectRotateTest = objectRotateTest.map((item) => {
-        //   object.scene.children[0].children[0].rotation.z = (3.14 / 2) * 2;
-
-        //   if(item.userData.id === 3) {
-        //     item.scene.position.x = -76;
-        //     item.scene.position.y = -17;
-        //   }
-
-        //   if(item.userData.id === 4) {
-        //     item.scene.position.x = -66
-        //   }
-         
-        // })
-        // objectRotateEl = objectRotateEl.map( (item) =>{
-        //   console.log('objectRotate',item)
-        //   item.scene.position.x = -76
-        // })
-        
-        console.log('objectData.rotate',objectData.rotate);
-        // new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
-        var box = new THREE.Box3().setFromObject( object.scene.children[0].children[0] );
-        console.log('box.getsize',box.max.x + box.min.x);
-        let objectSize = box.max.x + box.min.x;
-       
-        // object.scene.position.x = -76;
-      }
-     
       if (objectData.connectors) {
         // console.log('connector',connector);
         console.log('objectData.id', objectData.id);
@@ -1022,7 +978,8 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       
       lastInsertObject = object.scene;
       console.log('object ', object);
-      
+      currentConnector = { object: null };
+      loader.style.display ='none';
       return object, lastInsertObject;
     });
   });
@@ -1074,16 +1031,13 @@ const addPlug = (plug) => {
     }
 
   })
-  // for (let i = 0; i <= plug.length; i++) {
-  //   console.log('Port zang', i);
 
-  // }
 }
 
 const setDetail = (detail) => {
 
   if (currentConnector.object) {
-
+    
     instantiateObject(detail, currentConnector.object.position);
     console.log('currentConnector', currentConnector)
     scene.remove(currentConnector.object);
@@ -1152,7 +1106,7 @@ const deleteObject = function (e) {
 
           console.log('object.scene.uuid',object.scene.uuid)
           configurator_list = configurator_list.filter(element => element[1] !== object.scene.uuid);
-        
+
           scene.remove(object.scene);
           clearPorts = filledPorts.filter(function (f) { return f !== object.userData.connectorId });
           // console.log('connector delete',connector);
@@ -1175,14 +1129,12 @@ const replaceArea = (event) => {
 
   if(object_status) {
     object_status = false;
-    console.log('click object')
-    console.log('object_status',object_status)
+    loader.style.display ='flex';
 
-    if (object) {
-
+    if (object) {  
       setDetail(object);
     } else {
-  
+
     }
   }
 
@@ -1232,7 +1184,7 @@ var docInfo = {
       text: 'Ваша конфигурация',
       fontSize: 20,
       alignment: 'center',
-      margin: [0, 0, 0, 50]
+      margin: [0, 80, 0, 50]
       //pageBreak:'after'
     },
 

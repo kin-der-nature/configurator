@@ -12,6 +12,9 @@
 <body>
     <section class="configurator-section">
         <canvas id="canvas" ></canvas>
+        <div class="loader-section">
+          <div class="loader">Loading...</div>
+        </div>
         <section class="configurator_controllers">
             <div class="configurator_title_block">
                 <h4 class="">Название конфигуратора</h4>
@@ -19,7 +22,6 @@
                 <p class="module_title">Модули</p>
             </div>
             <div class="configurator_model_block row d-flex align-items-center justify-content-start configurator_block">
-             
             </div>
             <button type="button" class="btn configurator-button-list d-flex align-items-center justify-content-center" 
                     data-bs-toggle="modal" data-bs-target="#exampleModal" 
@@ -40,7 +42,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" onclick="createPdfconfigurator()">Отправить конфигурацию</button>
+              <button type="button" class="btn btn-primary" onclick="createPdfconfigurator()">СФОРМИРОВАТЬ PDF</button>
              
             </div>
           </div>
