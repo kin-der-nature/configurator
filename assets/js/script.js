@@ -591,7 +591,7 @@ let clearPorts = [];
 const scene = new THREE.Scene();
 const canvas = document.querySelector('#canvas');
 const camera = new THREE.PerspectiveCamera(100, canvas.width / canvas.height, 10, 1000);
-let canvasPosition = canvas.getBoundingClientRect();
+
 const renderer = new THREE.WebGLRenderer({
   canvas,
   antialias: true,
@@ -645,7 +645,7 @@ let lastInsertObject;
 console.log('window.innerHeight',window.innerHeight)
 
 function onMouseMove(event) {
-  
+  let canvasPosition = canvas.getBoundingClientRect();
   mouse.x = ((event.clientX - canvasPosition.x) / canvasPosition.width) * 2 - 1;
   mouse.y = -((event.clientY - canvasPosition.y) / canvasPosition.height) * 2 + 1;
   raycaster.setFromCamera(mouse, camera);
@@ -987,7 +987,21 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
 main();
 
+let inp = document.querySelector('#tel');
 
+// Проверяем фокус
+inp.addEventListener('focus', _ => {
+  // Если там ничего нет или есть, но левое
+  if(!/^\+\d*$/.test(inp.value))
+    // То вставляем знак плюса как значение
+    inp.value = '+';
+});
+
+inp.addEventListener('keypress', e => {
+  // Отменяем ввод не цифр
+  if(!/\d/.test(e.key))
+    e.preventDefault();
+});
 
 function getCenterPoint(mesh) {
 
@@ -1127,7 +1141,7 @@ const replaceArea = (event) => {
   object = records.objects.find(item => item.id == event.target.dataset.modelId);
   
 
-  if(object_status) {
+  if (object_status) {
     object_status = false;
     loader.style.display ='flex';
 
@@ -1282,7 +1296,7 @@ const detailCard = (id, title, text, image) => {
   <img src="assets/images/${image}" class="card-img-top" alt="...">
   <div class="card-body">
     <a href="#" class="configurator-link" data-model-id=${id} onclick="replaceArea(event)">
-      <i class="fa fa-plus-square configurator-icons" aria-hidden="true"></i>      
+      <i class="fa fa-plus-square configurator-icons" aria-hidden="true"></i>
       ${title}
   </a>
     <p class="card-text">${text}</p>

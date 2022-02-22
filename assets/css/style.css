@@ -22,7 +22,16 @@ html,body
     align-items: center;
     justify-content: center;
 }
+.btn-form
+{
+  background: #edf0f3;
+  color: #666666;
+  border: none;
+  padding: 15px 20px 15px 20px;
+  font-size: 15px;
+  border-radius: 5px;
 
+}
 .row
 {
     margin-right: 0;
