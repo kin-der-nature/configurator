@@ -34,36 +34,30 @@
     <div class="modal fade configurator-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" style="max-width: 50%;">
           <div class="modal-content">
-        
-     
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Конфигурация</h5>
-              
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="d-flex configurator-table" style="flex-direction: column;flex-wrap: nowrap;align-content: center;align-items: center;">
-                  
-                </div>
+                <div class="d-flex configurator-table" style="flex-direction: column;flex-wrap: nowrap;align-content: center;align-items: center;"></div>
                 <div class="collapse" id="collapseExample">
                   <div class="card card-body">
-                    <form> 
+                    <form>
                       <div class="row">
                         <div class="col-6 mt-5">
-                          <input type="text" class="form-control" placeholder="Фио">
+                          <input type="text" class="form-control" required placeholder="Фио">
                         </div>
                         <div class="col-6 mt-5">
                           <input type="text" class="form-control" placeholder="Название компании">
                         </div>
                         <div class="col-6 mt-5">
-                          <input type="text" name="tel" placeholder="Номер телефона" required maxlength="13" id="tel">
+                          <input type="text"  class="form-control" placeholder="Номер телефона">
                         </div>
                         <div class="col-6 mt-5">
-                          <input type="email" class="form-control" placeholder="Email">
+                          <input type="email" class="form-control" aria-describedby="emailHelp"  placeholder="Email">
                         </div>
                         <div class="col-6 mt-5">
-                         <button type="button" class="bth bth-primary btn-form">Отправить</button>
-                        
+                         <button type="submit" class="bth bth-primary btn-form">Отправить</button>
                       </div>
                     </form>
                   </div>
@@ -74,13 +68,11 @@
               <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Отправить конфигурацию
             </button>
-             
             </div>
           </div>
         </div>
       </div>
 
-   
     <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/GLTFLoader.js'></script>

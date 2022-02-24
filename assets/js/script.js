@@ -249,7 +249,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 35, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
 
 
         },
@@ -259,7 +259,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 49.5, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
 
         },
         {
@@ -268,7 +268,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 64, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
 
         },
         {
@@ -277,7 +277,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 78, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
 
         },
         {
@@ -286,7 +286,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 94, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
 
         },
         {
@@ -295,7 +295,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 108, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
 
         },
         {
@@ -304,7 +304,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 122.5, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
           // connectorLevel = 2,
         },
         {
@@ -313,7 +313,7 @@ const records = {
           scale: { x: 14, y: 10, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 137, y: 8, z: -15 },
-          connector_type: 4,
+          connector_type: 6,
           // connectorLevel = 2,
         },
 
@@ -548,9 +548,33 @@ const records = {
       image: 'Оптический модуль.png',
       title: 'Оптический модуль',
       text: 'Подробный текст',
-      errorRate: { x: 4, y: 6, z: -38 },
-
+      errorRate: { x: 2, y: 6, z: -38 },
       id: 10,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: 'Артикул 5',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'Оптический модуль',
+      text: 'Подробный текст',
+      errorRate: { x: -2, y: -6, z: -38 },
+      id: 11,
+      rotate:{x: 90,y: 50,z: 55},
+      connector_type: 6,
+    },
+    {
+      modelName: 'Медный модуль.glb',
+      materialName: 'materials.mtl',
+      articule: 'Артикул 5',
+      dataUrl: '',
+      image: 'Медный_модуль.png',
+      title: 'Медный модуль',
+      text: 'Подробный текст',
+      errorRate: { x: 0, y: 6, z: -45 },
+      id: 12,
       connector_type: 4,
     },
     {
@@ -561,10 +585,10 @@ const records = {
       image: 'Медный_модуль.png',
       title: 'Медный модуль',
       text: 'Подробный текст',
-      errorRate: { x: 1, y: 6, z: -45 },
-
-      id: 11,
-      connector_type: 4,
+      rotate:{x: 90,y: 50,z: 55},
+      errorRate: { x: 0, y: -6, z: -45 },
+      id: 13,
+      connector_type: 6,
     },
     {
       modelName: 'Заглушка EP 7400.glb',
@@ -575,7 +599,7 @@ const records = {
       title: 'Заглушка',
       text: 'Подробный текст',
       errorRate: { x: 78, y: -10, z: 60 },
-      id: 12,
+      id: 14,
     },
   ]
 };
@@ -639,7 +663,7 @@ camera.position.set(0, 0.05, 400);
 const zeroPosition = new THREE.Vector3(0, 0, 0);
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
-let zang = records.objects.find(object => object.id === 12);
+let zang = records.objects.find(object => object.id === 14);
 let lastInsertObject;
 
 console.log('window.innerHeight',window.innerHeight)
@@ -681,6 +705,12 @@ function onMouseMove(event) {
 
   }
 }
+
+const formValidateFunction = () => {
+
+
+}
+
 
 const objectOpacity = (object, opacity) => {
   object.material.transparent = 1;
@@ -896,7 +926,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         if (objectData.modelName === 'Медный модуль.glb' || objectData.modelName === 'Оптический модуль.glb') {
           new THREE.Box3().setFromObject(object.scene.children[0].children[0]).getCenter(object.position);
 
-          object.scene.children[0].children[0].rotation.z = -4.65;
+          object.scene.children[0].children[0].rotation.z = -4.68;
           object.scene.children[0].children[0].rotation.x = -4.65;
         }
 
@@ -928,8 +958,13 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       console.log('objectDat egweg3t',objectData)
       if(objectData.rotate){
         console.log('objectData.rotate', objectData.rotate);
-        object.scene.rotation.set(0,0,3.14);
+        object.scene.rotation.set(0,0,3.13);
       }
+
+      // if(objectData.rotate && objectData.connector_type === 6){
+      //   console.log('objectData.rotate', objectData.rotate);
+      //   object.scene.rotation.set(0,0,3.15);
+      // }
 
         object.userData.id = objectData.id;
         filledPorts.push(object);
@@ -987,21 +1022,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
 main();
 
-let inp = document.querySelector('#tel');
 
-// Проверяем фокус
-inp.addEventListener('focus', _ => {
-  // Если там ничего нет или есть, но левое
-  if(!/^\+\d*$/.test(inp.value))
-    // То вставляем знак плюса как значение
-    inp.value = '+';
-});
-
-inp.addEventListener('keypress', e => {
-  // Отменяем ввод не цифр
-  if(!/\d/.test(e.key))
-    e.preventDefault();
-});
 
 function getCenterPoint(mesh) {
 
@@ -1047,6 +1068,8 @@ const addPlug = (plug) => {
   })
 
 }
+
+
 
 const setDetail = (detail) => {
 
