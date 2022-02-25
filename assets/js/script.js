@@ -661,6 +661,7 @@ let positionGreenX = document.querySelector('.positionX');
 // const camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, far);
 camera.position.set(0, 0.05, 400);
 const zeroPosition = new THREE.Vector3(0, 0, 0);
+let canvasPosition = canvas.getBoundingClientRect();
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
 let zang = records.objects.find(object => object.id === 14);
@@ -669,7 +670,7 @@ let lastInsertObject;
 console.log('window.innerHeight',window.innerHeight)
 
 function onMouseMove(event) {
-  let canvasPosition = canvas.getBoundingClientRect();
+  
   mouse.x = ((event.clientX - canvasPosition.x) / canvasPosition.width) * 2 - 1;
   mouse.y = -((event.clientY - canvasPosition.y) / canvasPosition.height) * 2 + 1;
   raycaster.setFromCamera(mouse, camera);
@@ -847,6 +848,8 @@ function main() {
 
   requestAnimationFrame(render);
 }
+
+
 
 function toDataURL(src, callback, outputFormat) {
   var img = new Image();
