@@ -961,7 +961,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       console.log('objectDat egweg3t',objectData)
       if(objectData.rotate){
         console.log('objectData.rotate', objectData.rotate);
-        object.scene.rotation.set(0,0,3.13);
+        object.scene.rotation.set(0,0,3.14);
       }
 
       // if(objectData.rotate && objectData.connector_type === 6){
