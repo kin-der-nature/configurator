@@ -630,6 +630,7 @@ var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // call this only in static scenes (i.e., if there is no animation loop)
 controls.update()
+controls.enableZoom = false
 //onCLick stuff
 renderer.domElement.addEventListener("mousedown", onclick, true);
 renderer.domElement.addEventListener("mousemove", onMouseMove, true);
@@ -656,6 +657,7 @@ let currentobject;
 let configurator = [];
 let configurator_list = [];
 let object_status = true;
+let object_remove;
 let configurator_table = document.querySelector('.configurator-table')
 let positionGreenX = document.querySelector('.positionX');
 // const camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, far);
@@ -707,12 +709,6 @@ function onMouseMove(event) {
   }
 }
 
-const formValidateFunction = () => {
-
-
-}
-
-
 const objectOpacity = (object, opacity) => {
   object.material.transparent = 1;
   object.material.opacity = opacity;
@@ -731,10 +727,20 @@ const setCurrentConnector = (newCurrentConnector) => {
   
 }
 
+//TODO transfer
+function getParent(findedObject){
+    return findedObject.type === 'Scene' ? findedObject : getParent(findedObject.parent);
+}
+
 function onclick(event) {
   raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(scene.children, true);
-
+  const objects = scene.children.filter(object => object.type === 'Mesh' || object.type === 'Scene' && (object.name === ''));
+  const intersects = raycaster.intersectObjects(objects, true);
+  let findedObject = intersects[0];
+  findedObject = getParent(findedObject.object);
+  object_remove = findedObject;
+  deleteObject(object_remove.uuid)
+  
   if (intersects.length && intersects[0].object.userData.type && currentConnector) {
 
     objectOpacity(focusObject, 0.5);
@@ -759,7 +765,13 @@ function onclick(event) {
     // addObject();
     // scene.remove(intersects[0].object.parent);
   }
+
+  objectPool.map((item) => {
+    console.log(item.scene)
+  })
 }
+
+
 
 const createArea = (connector, object, objectId) => {
   let geometry = new THREE.BoxGeometry();
@@ -1008,6 +1020,8 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       configurator_table.append(modal_configurator(objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
 
+      console.log('instanctiate object', object);
+
       if (objectData.connectors) {
         // console.log('connector',connector);
         console.log('objectData.id', objectData.id);
@@ -1092,17 +1106,19 @@ const setDetail = (detail) => {
 
 };
 
-
-
-const deleteObject = function (e) {
+const deleteObjectTest = function(e) {
   const target = e.target;
   const objectuuId = this.dataset['uuid'];
   this.parentElement.parentElement.remove();
   // configurator_list = configurator_list.filter(object => object[0] !== parseInt(objectuuId)); 
   target.parentElement.parentElement.remove();
-  //TODO переписать id на uuid
+  deleteObject(objectuuId);
+}
 
-  const object = objectPool.find(object => object.scene.uuid === objectuuId);
+const deleteObject = function (objectuuId) {
+
+  console.log('object_remove',object_remove)
+  const object = objectPool.find(object => object.scene.uuid === objectuuId );
   console.log('object', object)
 
   if (object) {
@@ -1302,7 +1318,7 @@ const modal_configurator = (id, uuid, childrenUUid, title, articule, text, image
   el_link.classList = "btn btn-danger";
   el_link.dataset.uuid = uuid
   el_link.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i>";
-  el_link.onclick = deleteObject;
+  el_link.onclick = deleteObjectTest;
 
   if (id != 1) {
     el_block_link.append(el_link);
