@@ -48,7 +48,7 @@ html,body
 }
 .configurator_model_block
 {
-    height: 450px !important;
+    height: 380px !important;
     overflow-y: scroll;
     margin-bottom: 50px;
 }

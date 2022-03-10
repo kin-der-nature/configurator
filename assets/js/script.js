@@ -7,8 +7,8 @@ const records = {
     {
       modelName: '1031-0011-A02--ASSY_LM-10G-PxC-20191025.glb',
       image: 'FL SWITCH EP7400 M4TGSFP 1.png',
-      title: 'FL SWITCH EP7400-M4TGSFP -1144388',
-      text: 'Текст',
+      title: 'FL SWITCH EP7400-M4TGSFP',
+      text: 'Модуль 4 порта SFP (1/10 Гб/с)',
       articule: '1144388',
       dataUrl: '',
       id: 2,
@@ -22,7 +22,7 @@ const records = {
           scale: { x: 15, y: 12, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: -67, y: 34, z: -10 },
-          connector_type: 4
+          connector_type: 7
         },
         {
           id: 2,
@@ -30,7 +30,7 @@ const records = {
           scale: { x: 15, y: 12, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: -39, y: 34, z: -10 },
-          connector_type: 4
+          connector_type: 7
         },
         {
           id: 3,
@@ -38,7 +38,7 @@ const records = {
           scale: { x: 15, y: 12, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: -10, y: 34, z: -10 },
-          connector_type: 4
+          connector_type: 7
         },
         {
           id: 4,
@@ -46,7 +46,7 @@ const records = {
           scale: { x: 15, y: 12, z: 20 },
           errorRate: { x: 0, y: 0, z: 0 },
           errorRatePort: { x: 17, y: 34, z: -10 },
-          connector_type: 4
+          connector_type: 7
         }
       ],
     },
@@ -56,11 +56,11 @@ const records = {
       modelName: 'model_test.glb',
       materialName: 'materials.mtl',
       image: "EP7400-Chassis_Back_2.png",
-      title: 'Шасси',
+      title: 'FL SWITCH EP7428R-L3F1',
       position: { x: 0, y: 50, z: 0 },
-      articule: 'Артикул 2',
+      articule: '1144353',
       dataUrl: '',
-      text: 'Текст',
+      text: 'Шасси коммутатора - до 28 портов, L2/L3, МЭК-61850, PTPv2',
 
       connectors: [
         {
@@ -143,8 +143,8 @@ const records = {
       modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
-      title: 'FL SWITCH EP7400-M8GSFP-1144383',
-      text: 'Подробный текст',
+      title: 'FL SWITCH EP7400-M8GSFP',
+      text: 'Модуль 8 портов SFP (100/1000 Мб/с)',
       articule: '1144383',
       dataUrl: '',
       id: 3,
@@ -234,8 +234,8 @@ const records = {
       modelName: '1031-0010-A03-ASSY_LM-8SFP-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GRJ45 1 .png',
-      title: 'FL SWITCH EP7400-M8GSFP-1144383 ',
-      text: 'Подробный текст',
+      title: 'FL SWITCH EP7400-M8GSFP ',
+      text: 'Модуль 8 портов SFP (100/1000 Мб/с)',
       articule: '1144383',
       dataUrl: '',
       id: 4,
@@ -324,8 +324,8 @@ const records = {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400-M8GRJ45-1144375',
-      text: 'Подробный текст',
+      title: 'FL SWITCH EP7400-M8GRJ45',
+      text: 'Модуль 8 портов RJ45 (10/100/1000 Мб/с)',
       articule: '1144375',
       dataUrl: '',
       id: 5,
@@ -414,8 +414,8 @@ const records = {
       modelName: '1031-0017-A02--iRM-L3-LM-8RJ45-ASSY-iMX-PxC-20191025.glb',
       materialName: 'optica_materials.mtl',
       image: 'FL SWITCH EP7400 M8GSFP 2.png',
-      title: 'FL SWITCH EP7400-M8GRJ45-1144375',
-      text: 'Подробный текст',
+      title: 'FL SWITCH EP7400-M8GRJ45',
+      text: 'Модуль 8 портов RJ45 (10/100/1000 Мб/с)',
       articule: '1144375',
       dataUrl: '',
       id: 6,
@@ -505,10 +505,10 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400-PS-HV-1144175',
+      title: 'FL SWITCH EP7400-PS-HV',
       articule: '1144175',
       dataUrl: '',
-      text: 'Подробный текст',
+      text: 'Модуль питания 110/220 ACD/VDC (85-264 VAC или 88-370 VDC)',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
       id: 7,
@@ -518,10 +518,10 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400-PS-LV-1144367',
+      title: 'FL SWITCH EP7400-PS-LV',
       articule: '1144367',
       dataUrl: '',
-      text: 'Подробный текст',
+      text: 'Модуль питания 24 VDC (10-36 VDC)',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
       id: 8,
@@ -531,10 +531,10 @@ const records = {
       modelName: '1031-0002-A01-iMX350_PS_MV_LV-ASSY--PxC-20191025.glb',
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
-      title: 'FL SWITCH EP7400-PS-MV-1144372',
+      title: 'FL SWITCH EP7400-PS-MV',
       articule: '1144372',
       dataUrl: '',
-      text: 'Подробный текст',
+      text: 'Модуль питания 48 VDC (36-72 VDC)',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
       id: 9,
@@ -543,23 +543,24 @@ const records = {
     {
       modelName: 'Оптический модуль.glb',
       materialName: 'materials.mtl',
-      articule: 'Артикул 5',
+      articule: '2891081',
       dataUrl: '',
       image: 'Оптический модуль.png',
-      title: 'Оптический модуль',
-      text: 'Подробный текст',
+      title: 'FL SFP FX',
+      text: 'Оптический многомодовый SFP модуль 100 Мб/с (100BASE-FX, 2 км, 1300/1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 10,
       connector_type: 4,
     },
+    
     {
       modelName: 'Оптический модуль.glb',
       materialName: 'materials.mtl',
-      articule: 'Артикул 5',
+      articule: '2891081',
       dataUrl: '',
       image: 'Оптический модуль.png',
-      title: 'Оптический модуль',
-      text: 'Подробный текст',
+      title: 'FL SFP FX',
+      text: 'Оптический многомодовый SFP модуль 100 Мб/с (100BASE-FX, 2 км, 1300/1310 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
       id: 11,
       rotate:{x: 90,y: 50,z: 55},
@@ -568,11 +569,11 @@ const records = {
     {
       modelName: 'Медный модуль.glb',
       materialName: 'materials.mtl',
-      articule: 'Артикул 5',
+      articule: '1207198',
       dataUrl: '',
       image: 'Медный_модуль.png',
-      title: 'Медный модуль',
-      text: 'Подробный текст',
+      title: 'FL SFP GT-H',
+      text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
       errorRate: { x: 0, y: 6, z: -45 },
       id: 12,
       connector_type: 4,
@@ -580,11 +581,11 @@ const records = {
     {
       modelName: 'Медный модуль.glb',
       materialName: 'materials.mtl',
-      articule: 'Артикул 5',
+      articule: '1207198',
       dataUrl: '',
       image: 'Медный_модуль.png',
-      title: 'Медный модуль',
-      text: 'Подробный текст',
+      title: 'FL SFP GT-H',
+      text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
       rotate:{x: 90,y: 50,z: 55},
       errorRate: { x: 0, y: -6, z: -45 },
       id: 13,
@@ -596,11 +597,185 @@ const records = {
       articule: '1144428',
       dataUrl: '',
       image: 'Заглушка.png',
-      title: 'Заглушка',
-      text: 'Подробный текст',
+      title: 'FL SWITCH EP7400 -ABLK',
+      text: 'Заглушка слотов коммутатора',
       errorRate: { x: 78, y: -10, z: 60 },
       id: 14,
     },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891082',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP FX SM',
+      text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 15,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891754',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX',
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 16,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2702397',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX2',
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 17,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891767',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP LX',
+      text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 18,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '1025401',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP LX10-B',
+      text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 19,
+      connector_type: 7,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891754',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX',
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 20,
+      connector_type: 7,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2702397',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX2',
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 21,
+      connector_type: 7,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891767',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP LX',
+      text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 22,
+      connector_type: 7,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '1025401',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP LX10-B',
+      text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 23,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '1025401',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP LX10-B',
+      rotate:{x: 90,y: 50,z: 55},
+      text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
+      errorRate: { x: -2, y: -6, z: -38 },
+      id: 24,
+      connector_type: 6,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891082',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP FX SM',
+      rotate:{x: 90,y: 50,z: 55},
+      text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
+      errorRate: { x: -2, y: -6, z: -38 },
+      id: 15,
+      connector_type: 6,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891754',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX',
+      rotate:{x: 90,y: 50,z: 55},
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
+      errorRate: { x: -2, y: -6, z: -38 },
+      id: 25,
+      connector_type: 6,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2702397',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX2',
+      rotate:{x: 90,y: 50,z: 55},
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
+      errorRate: { x: -2, y: -6, z: -38 },
+      id: 26,
+      connector_type: 6,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '2891767',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP LX',
+      rotate:{x: 90,y: 50,z: 55},
+      text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
+      errorRate: { x: -2, y: -6, z: -38 },
+      id: 27,
+      connector_type: 6,
+    },
+    
   ]
 };
 
@@ -634,8 +809,8 @@ controls.enableZoom = false
 //onCLick stuff
 renderer.domElement.addEventListener("mousedown", onclick, true);
 renderer.domElement.addEventListener("mousemove", onMouseMove, true);
-
-// renderer.domElement.addEventListener("contextmenu", contextmenu, false);
+renderer.domElement.addEventListener("dblclick", doubleClick, true);
+// renderer.domElement.addEventListener("contextmenu", onclick, false);
 let currentConnector = { object: null };
 
 const raycaster = new THREE.Raycaster();
@@ -663,7 +838,7 @@ let positionGreenX = document.querySelector('.positionX');
 // const camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, far);
 camera.position.set(0, 0.05, 400);
 const zeroPosition = new THREE.Vector3(0, 0, 0);
-let canvasPosition = canvas.getBoundingClientRect();
+
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
 let zang = records.objects.find(object => object.id === 14);
@@ -672,7 +847,7 @@ let lastInsertObject;
 console.log('window.innerHeight',window.innerHeight)
 
 function onMouseMove(event) {
-  
+  let canvasPosition = canvas.getBoundingClientRect();
   mouse.x = ((event.clientX - canvasPosition.x) / canvasPosition.width) * 2 - 1;
   mouse.y = -((event.clientY - canvasPosition.y) / canvasPosition.height) * 2 + 1;
   raycaster.setFromCamera(mouse, camera);
@@ -727,6 +902,8 @@ const setCurrentConnector = (newCurrentConnector) => {
   
 }
 
+
+
 //TODO transfer
 function getParent(findedObject){
     return findedObject.type === 'Scene' ? findedObject : getParent(findedObject.parent);
@@ -734,12 +911,8 @@ function getParent(findedObject){
 
 function onclick(event) {
   raycaster.setFromCamera(mouse, camera);
-  const objects = scene.children.filter(object => object.type === 'Mesh' || object.type === 'Scene' && (object.name === ''));
+  const objects = scene.children.filter(object => object.type === 'Mesh' || object.type === 'Scene' );
   const intersects = raycaster.intersectObjects(objects, true);
-  let findedObject = intersects[0];
-  findedObject = getParent(findedObject.object);
-  object_remove = findedObject;
-  deleteObject(object_remove.uuid)
   
   if (intersects.length && intersects[0].object.userData.type && currentConnector) {
 
@@ -757,21 +930,19 @@ function onclick(event) {
         model_return.innerHTML += detailCard(record.id, record.title, record.text, record.image);
         objectOpacity(currentConnector.object, 0.5);
       });
-
-    }
-
-    // connectorPool = connectorPool.filter(object => object.uuid !== intersects[0].uuid);
-
-    // addObject();
-    // scene.remove(intersects[0].object.parent);
+    } 
   }
-
-  objectPool.map((item) => {
-    console.log(item.scene)
-  })
+  
 }
 
-
+function doubleClick() {
+  raycaster.setFromCamera(mouse, camera);
+  const objects = scene.children.filter(object => object.type === 'Mesh' || object.type === 'Scene' );
+  const intersects = raycaster.intersectObjects(objects, true);
+  let findedObject = intersects[0];
+  findedObject = getParent(findedObject.object);
+  deleteObject(findedObject.uuid)
+}
 
 const createArea = (connector, object, objectId) => {
   let geometry = new THREE.BoxGeometry();
@@ -861,8 +1032,6 @@ function main() {
   requestAnimationFrame(render);
 }
 
-
-
 function toDataURL(src, callback, outputFormat) {
   var img = new Image();
   img.crossOrigin = 'Anonymous';
@@ -912,9 +1081,24 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       objectData.position = object.scene.children[0].children[0].position;
       objectData.uuid = object.scene.uuid;
       objectData.childrenuuid = object.userData.childrenUUid;
+      objectData.col = 1;
       configurator.push(objectData);
      
       toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+        objectPool.map((item) =>{
+        if(item.userData.id ===objectData.id)
+        {
+          console.log('to model copy');  
+        }
+
+        if(item.col) {
+          if(item.col > 0)
+          {
+
+          }
+        }
+
+        });
 
         configurator_list.push([objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
           image: dataUrl,
@@ -1008,16 +1192,13 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
-          
-        
-
         }
 
       }
-
       
-      console.log(' object.userData.childrenUUid',  object.userData.childrenUUid)
-      configurator_table.append(modal_configurator(objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
+      console.log(' object.userData.childrenUUid',  object.userData.childrenUUid);
+      
+      configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
 
       console.log('instanctiate object', object);
@@ -1038,8 +1219,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 };
 
 main();
-
-
 
 function getCenterPoint(mesh) {
 
@@ -1086,8 +1265,6 @@ const addPlug = (plug) => {
 
 }
 
-
-
 const setDetail = (detail) => {
 
   if (currentConnector.object) {
@@ -1109,15 +1286,10 @@ const setDetail = (detail) => {
 const deleteObjectTest = function(e) {
   const target = e.target;
   const objectuuId = this.dataset['uuid'];
-  this.parentElement.parentElement.remove();
-  // configurator_list = configurator_list.filter(object => object[0] !== parseInt(objectuuId)); 
-  target.parentElement.parentElement.remove();
   deleteObject(objectuuId);
 }
 
 const deleteObject = function (objectuuId) {
-
-  console.log('object_remove',object_remove)
   const object = objectPool.find(object => object.scene.uuid === objectuuId );
   console.log('object', object)
 
@@ -1139,16 +1311,18 @@ const deleteObject = function (objectuuId) {
 
             if (object.scene.uuid === children.userData.childrenUUid) {
               objectPool = objectPool.filter(item => item.scene.uuid !== children.userData.childrenUUid);
-              let modal_element =document.querySelector('.row[data-childrenuuid = "'+ (children.userData.childrenUUid +'"]'));
+              let modal_element = document.querySelector('.row[data-childrenuuid = "'+ (children.userData.childrenUUid +'"]'));
               modal_element.remove(modal_element);
-              configurator_list = configurator_list.filter(element => element[1] !== children.scene.uuid);
-       
+              configurator_list = configurator_list.filter(element => element[1] !== children.scene.uuid); 
               console.log('modal_element',modal_element)
               scene.remove(children.scene)
             }
           })
-          console.log('objectPool', objectPool);
-          // console.log('connectorPool',connectorPool);
+          
+          let row = document.querySelector('.row[data-uuid = "'+ object.scene.uuid +'"]');
+          row.remove(row);
+          // console.log('object', row1);
+    
           let connectorPoolDelete = connectorPool.filter(item => item.userData.parentUuid === object.scene.uuid);
           connectorPoolDelete = connectorPoolDelete.map((item) => {
             console.log('connectorPoolDelete', connectorPoolDelete);
@@ -1158,7 +1332,7 @@ const deleteObject = function (objectuuId) {
           });
 
           objectPool = objectPool.filter(item => item.scene.uuid !== object.scene.uuid);
-          console.log('object', object)
+          // console.log('object', object)
 
           console.log('object.scene.uuid',object.scene.uuid)
           configurator_list = configurator_list.filter(element => element[1] !== object.scene.uuid);
@@ -1182,7 +1356,6 @@ const replaceArea = (event) => {
 
   object = records.objects.find(item => item.id == event.target.dataset.modelId);
   
-
   if (object_status) {
     object_status = false;
     loader.style.display ='flex';
@@ -1193,8 +1366,6 @@ const replaceArea = (event) => {
 
     }
   }
-
- 
 }
 
 const setPlugs = () => {
@@ -1282,7 +1453,7 @@ const createPdfconfigurator = () => {
 
 }
 
-const modal_configurator = (id, uuid, childrenUUid, title, articule, text, image) => {
+const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, image) => {
 
   const row = document.createElement("div");
   row.classList = "row";
@@ -1291,19 +1462,26 @@ const modal_configurator = (id, uuid, childrenUUid, title, articule, text, image
   row.style.flexWrap = "nowrap";
   row.style.justifyContent = "space-between";
   row.dataset.childrenuuid = childrenUUid;
+  row.dataset.uuid =uuid;
 
+  const el_col = document.createElement("div");
+  el_col.classList = "col-md-1";
+  el_col.textContent = "X" + col;
+ 
   const el_title = document.createElement("div");
+  
   el_title.classList = "col-md-2";
   el_title.textContent = title;
 
   const el_text = document.createElement("div");
   el_text.classList = "col-md-3";
   el_text.textContent = text;
+  
   const el_articule = document.createElement("div");
   el_articule.classList = "col-md-3";
   el_articule.textContent = articule;
   const el_block_img = document.createElement("div");
-  el_block_img.classList = "col-md-3";
+  el_block_img.classList = "col-md-2";
 
   const el_img = document.createElement("img");
   el_img.src = "assets/images/" + image;
@@ -1323,7 +1501,7 @@ const modal_configurator = (id, uuid, childrenUUid, title, articule, text, image
   if (id != 1) {
     el_block_link.append(el_link);
   }
-
+  row.append(el_col);
   row.append(el_title);
   row.append(el_text);
   row.append(el_articule);
