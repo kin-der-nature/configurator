@@ -1085,21 +1085,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       configurator.push(objectData);
      
       toDataURL('assets/images/' + objectData.image, function (dataUrl) {
-        objectPool.map((item) =>{
-        if(item.userData.id ===objectData.id)
-        {
-          console.log('to model copy');  
-        }
-
-        if(item.col) {
-          if(item.col > 0)
-          {
-
-          }
-        }
-
-        });
-
         configurator_list.push([objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
           image: dataUrl,
           width: 100
@@ -1150,6 +1135,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
         object.userData.errorRate = objectData.errorRate;
         object.userData.connectorLevel = objectData.connectorLevel;
+        object.userData.col 
         object.userData.rotate = objectData.rotate;
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
@@ -1181,7 +1167,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           }
           object.userData.parentId = currentConnector.object.userData.parentId;
           object.userData.connectorId = currentConnector.object.userData.id;
-          
+          object.userData.articule = objectData.articule;
           object.userData.children = currentConnector.object.children;
           object.userData.parentUuid = object.scene.uuid;
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
@@ -1198,6 +1184,22 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       
       console.log(' object.userData.childrenUUid',  object.userData.childrenUUid);
       
+      const lookup = objectPool.reduce((a, e) => {
+        a[e.id] = ++a[e.id] || 0;
+
+        return a;
+      }, {});
+      
+      repeatObject = objectPool.filter(e => lookup[e.id]);
+
+      repeatObject.map((item) => {
+
+        if(item.userData.articule === objectData.articule) {
+          
+        }
+
+      });
+
       configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
 
@@ -1213,6 +1215,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       console.log('object ', object);
       currentConnector = { object: null };
       loader.style.display ='none';
+
       return object, lastInsertObject;
     });
   });
@@ -1465,11 +1468,29 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.dataset.uuid =uuid;
 
   const el_col = document.createElement("div");
-  el_col.classList = "col-md-1";
-  el_col.textContent = "X" + col;
- 
+  el_col.classList = "col-md-1 d-flex";
+  el_col.textContent = "X";
+
+  const repeat_el_col = document.createElement("p");
+  repeat_el_col.classList ="element_col";
+  repeat_el_col.textContent = col;
+  repeat_el_col.dataset.uuid = uuid;
+
+  const accrodion_repeat_block = document.createElement("div");
+  accrodion_repeat_block.classList = "accordion-item";
+  accrodion_repeat_block.dataset.uuid = uuid;
+
+  const accordion_header = document.createElement("h2");
+  accordion_header.classList ="accordion-header";
+  accordion_header.id = "accordion" + uuid;
+
+  const accordion_button = document.createElement("button");
+  accordion_button.classList ="accordion-button collapsed";
+  accordion_button.setAttribute("data-bs-toggle","collapse");
+  accordion_button.setAttribute("data-bs-target","#flush-collapse");
+  accordion_button.textContent = title;
+
   const el_title = document.createElement("div");
-  
   el_title.classList = "col-md-2";
   el_title.textContent = title;
 
@@ -1501,13 +1522,15 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   if (id != 1) {
     el_block_link.append(el_link);
   }
+
   row.append(el_col);
   row.append(el_title);
   row.append(el_text);
   row.append(el_articule);
   row.append(el_block_img);
   row.append(el_block_link);
-
+  el_col.append(repeat_el_col);
+  
   return row;
 }
 
