@@ -1195,7 +1195,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       repeatObject.map((item) => {
 
         if(item.userData.articule === objectData.articule) {
-          
+        
         }
 
       });
