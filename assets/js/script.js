@@ -831,6 +831,7 @@ let connectorPool = [];
 let currentobject;
 let configurator = [];
 let configurator_list = [];
+let repeatPool= [];
 let object_status = true;
 let object_remove;
 let configurator_table = document.querySelector('.configurator-table')
@@ -1083,7 +1084,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       objectData.childrenuuid = object.userData.childrenUUid;
       objectData.col = 1;
       configurator.push(objectData);
-     
+      let repeat_col = 1;
       toDataURL('assets/images/' + objectData.image, function (dataUrl) {
         configurator_list.push([objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
           image: dataUrl,
@@ -1172,10 +1173,10 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.parentUuid = object.scene.uuid;
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
           object.userData.connector_type = currentConnector.object.userData.connector_type;
+          object.userData.col = objectData.col;
           // objectData.rotate = currentConnector.object.userData.rotateId;
           // console.log('objectData.rotate',objectData.rotate)
-          
-          
+
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
         }
@@ -1183,28 +1184,43 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       }
       
       console.log(' object.userData.childrenUUid',  object.userData.childrenUUid);
+
+      if(objectPool.length > 1) {
+
+        objectPool.map((element) => {
+
+          if(element.userData.articule === object.userData.articule) {
+            repeatPool = repeatPool.filter((item) => item.userData.articule !==object.userData.articule);
+            repeatPool.push(object);
+            object.userData.col ++;
+            console.log('object.userData.col',object.userData.col)
+          }
+        });
+      }
       
-      const lookup = objectPool.reduce((a, e) => {
-        a[e.id] = ++a[e.id] || 0;
+      repeatPool.map((item) =>{
 
-        return a;
-      }, {});
-      
-      repeatObject = objectPool.filter(e => lookup[e.id]);
-
-      repeatObject.map((item) => {
-
-        if(item.userData.articule === objectData.articule) {
-        
+        if(item.userData.articule === object.userData.articule) {
+          object.userData.col = item.userData.col;
         }
+      })
+      console.log('object.userData.col',object.userData.col);
+    
+      if(object.userData.col > 1) {
+        let repeatElement = document.querySelector('.element_col[data-articule = "'+ (object.userData.articule +'"]'));
+        console.log('repeatElement',repeatElement);
+        repeatElement.innerHTML = object.userData.col;
+      }
+      else {
+        configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
+      }
 
-      });
-
-      configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       objectPool.push(object);
-
+      console.log('repeatPool',repeatPool);
+      
       console.log('instanctiate object', object);
-
+      
+      
       if (objectData.connectors) {
         // console.log('connector',connector);
         console.log('objectData.id', objectData.id);
@@ -1321,11 +1337,15 @@ const deleteObject = function (objectuuId) {
               scene.remove(children.scene)
             }
           })
+          repeatPool.map((item) => {
+            if(item.userData.articule === object.userData.articule) {
+              object.userData.col -1 ;
+              let repeatElement = document.querySelector('.element_col[data-articule = "'+ (object.userData.articule +'"]'));
+              repeatElement.innerHTML = object.userData.col;
+            }
+          });
+         
           
-          let row = document.querySelector('.row[data-uuid = "'+ object.scene.uuid +'"]');
-          row.remove(row);
-          // console.log('object', row1);
-    
           let connectorPoolDelete = connectorPool.filter(item => item.userData.parentUuid === object.scene.uuid);
           connectorPoolDelete = connectorPoolDelete.map((item) => {
             console.log('connectorPoolDelete', connectorPoolDelete);
@@ -1465,7 +1485,7 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.style.flexWrap = "nowrap";
   row.style.justifyContent = "space-between";
   row.dataset.childrenuuid = childrenUUid;
-  row.dataset.uuid =uuid;
+  row.dataset.articule =articule;
 
   const el_col = document.createElement("div");
   el_col.classList = "col-md-1 d-flex";
@@ -1474,7 +1494,7 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   const repeat_el_col = document.createElement("p");
   repeat_el_col.classList ="element_col";
   repeat_el_col.textContent = col;
-  repeat_el_col.dataset.uuid = uuid;
+  repeat_el_col.dataset.articule = articule;
 
   const accrodion_repeat_block = document.createElement("div");
   accrodion_repeat_block.classList = "accordion-item";
