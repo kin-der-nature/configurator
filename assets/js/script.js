@@ -1075,7 +1075,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
     objLoader.load(objectData.modelName, function (object) {
       let modelObject = currentConnector.object;
-
       scene.add(object.scene);
      
       object.scene.position.copy(position);
@@ -1136,7 +1135,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
         object.userData.errorRate = objectData.errorRate;
         object.userData.connectorLevel = objectData.connectorLevel;
-        object.userData.col 
+        object.userData.col;
         object.userData.rotate = objectData.rotate;
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
@@ -1198,7 +1197,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         });
       }
       
-      repeatPool.map((item) =>{
+      repeatPool.map((item) => {
 
         if(item.userData.articule === object.userData.articule) {
           object.userData.col = item.userData.col;
@@ -1219,7 +1218,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       console.log('repeatPool',repeatPool);
       
       console.log('instanctiate object', object);
-      
       
       if (objectData.connectors) {
         // console.log('connector',connector);
@@ -1329,23 +1327,50 @@ const deleteObject = function (objectuuId) {
           let childrenListObject = objectPool.map((children) => {
 
             if (object.scene.uuid === children.userData.childrenUUid) {
-              objectPool = objectPool.filter(item => item.scene.uuid !== children.userData.childrenUUid);
-              let modal_element = document.querySelector('.row[data-childrenuuid = "'+ (children.userData.childrenUUid +'"]'));
+              console.log('wfafawfawwfawfawfaawfawffwa',children)
+              objectPool = objectPool.filter(item => item.scene.uuid !== children.userData.childrenUuid);
+              let modal_element = document.querySelector('.row[data-uuid = "'+ (children.scene.uuid +'"]'));
               modal_element.remove(modal_element);
               configurator_list = configurator_list.filter(element => element[1] !== children.scene.uuid); 
               console.log('modal_element',modal_element)
               scene.remove(children.scene)
             }
           })
-          repeatPool.map((item) => {
-            if(item.userData.articule === object.userData.articule) {
-              object.userData.col -1 ;
-              let repeatElement = document.querySelector('.element_col[data-articule = "'+ (object.userData.articule +'"]'));
-              repeatElement.innerHTML = object.userData.col;
-            }
-          });
-         
           
+           if(!repeatPool.length > 0) {
+            let row1 = document.querySelector('.row[data-articule = "'+ (object.userData.articule +'"]'));
+            console.log('row',row1)
+            row1.remove(row1);
+           }
+
+            repeatPool.map((item) => {
+            
+              if(object.userData.articule === item.userData.articule) {
+                console.log(1)
+                if(item.userData.col > 1) {
+  
+                  let repeatElement = document.querySelector('.element_col[data-articule = "'+ (item.userData.articule +'"]'));
+                  item.userData.col -- ;
+                  console.log('object.userData.col',object.userData.col)
+                  repeatElement.innerHTML = item.userData.col;
+                  
+                } 
+                else {
+
+                  console.log('egakgawegaihgaiwogawha')
+                  repeatPool = repeatPool.filter((repeatItem) => repeatItem.userData.articule !== item.userData.articule)
+                  let row = document.querySelector('.row[data-articule = "'+ (item.userData.articule +'"]'));
+                  row.remove(row);
+                }
+              }
+              else {
+                
+              
+              }
+            })
+            
+           // console.log('fwajwafifwaihwfahio')
+             
           let connectorPoolDelete = connectorPool.filter(item => item.userData.parentUuid === object.scene.uuid);
           connectorPoolDelete = connectorPoolDelete.map((item) => {
             console.log('connectorPoolDelete', connectorPoolDelete);
@@ -1353,7 +1378,7 @@ const deleteObject = function (objectuuId) {
             // connectorPool = connectorPool.filter(element => element.scene.uuid !==item.userData.childrenUuid)
             scene.remove(item);
           });
-
+         
           objectPool = objectPool.filter(item => item.scene.uuid !== object.scene.uuid);
           // console.log('object', object)
 
@@ -1486,7 +1511,7 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.style.justifyContent = "space-between";
   row.dataset.childrenuuid = childrenUUid;
   row.dataset.articule =articule;
-
+  row.dataset.uuid = uuid;
   const el_col = document.createElement("div");
   el_col.classList = "col-md-1 d-flex";
   el_col.textContent = "X";
