@@ -1337,6 +1337,7 @@ const deleteObject = function (objectuuId) {
             }
           })
           
+          
            if(!repeatPool.length > 0) {
             let row1 = document.querySelector('.row[data-articule = "'+ (object.userData.articule +'"]'));
             console.log('row',row1)
