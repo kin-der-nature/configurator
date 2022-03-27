@@ -1211,17 +1211,26 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
       toDataURL('assets/images/' + objectData.image, function (dataUrl) {
         
+
+       
         repeatPool.map((item) => {
 
-          if(item.articule === objectData.articule) {
-           
+          console.log(' objectData.articule', objectData.articule)
+          if(item.userData.articule === objectData.articule) {
+          
             if(object.userData.col > 1) {
-              
+             
+            }
+            else {
+              configurator_list.push([item.userData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
+                image: dataUrl,
+                width: 100
+              }]);
             }
           }
           else if(object.userData.col) {
           
-            
+           
           }
         
         })
