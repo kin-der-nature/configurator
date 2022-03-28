@@ -1374,7 +1374,8 @@ const deleteObject = function (objectuuId) {
               row1.remove(row1);
             }
            }
-
+ 
+           
             repeatPool.map((item) => {
             
               if(object.userData.articule === item.userData.articule) {
