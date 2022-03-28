@@ -845,7 +845,7 @@ const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
 let zang = records.objects.find(object => object.id === 14);
 let lastInsertObject;
-configurator_list.push(['#',1,'#','Название','Артикул','Описание','Изображение'])
+configurator_list.push(['#',1,1,'Название','Артикул','Описание','Изображение'])
 console.log('window.innerHeight',window.innerHeight)
 
 function onMouseMove(event) {
@@ -1075,6 +1075,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
     objLoader.setDRACOLoader(dracoLoader);
 
     objLoader.load(objectData.modelName, function (object) {
+      console.log('object',object)
       let modelObject = currentConnector.object;
       scene.add(object.scene);
      
@@ -1117,7 +1118,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
       
 
-        if(objectData)
+        // if (objectData)
         // object.userData = {
         //   connectorId: currentConnector.object.userData.id,
         //   parentId: currentConnector.object.userData.parentId,
@@ -1127,10 +1128,10 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         //   connectorLevel: objectData.connectorLevel,
         //   id: objectData.id
         // };
-
+        object.userData = {};
         object.userData.errorRate = objectData.errorRate;
         object.userData.connectorLevel = objectData.connectorLevel;
-        object.userData.col;
+        object.userData.col = objectData.col;
         object.userData.rotate = objectData.rotate;
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
@@ -1168,6 +1169,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
           object.userData.connector_type = currentConnector.object.userData.connector_type;
           object.userData.col = objectData.col;
+          console.log('object model', object)
           // objectData.rotate = currentConnector.object.userData.rotateId;
           // console.log('objectData.rotate',objectData.rotate)
 
@@ -1186,48 +1188,54 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           if(element.userData.articule === object.userData.articule) {
             repeatPool = repeatPool.filter((item) => item.userData.articule !== object.userData.articule);
             repeatPool.push(object);
-            object.userData.col ++;
+            object.userData.col++;
             console.log('object.userData.col',object.userData.col)
           }
         });
       }
-      
+
       repeatPool.map((item) => {
 
         if(item.userData.articule === object.userData.articule) {
           object.userData.col = item.userData.col;
-          objectData.col = item.userData.col
+          objectData.col = item.userData.col;
         }
       })
-      console.log('object.userData.col',object.userData.col);
-    
-      if(object.userData.col > 1) {
+     
+      
+      if(objectData.col > 1) {
         let repeatElement = document.querySelector('.element_col[data-articule = "'+ (object.userData.articule +'"]'));
         console.log('repeatElement',repeatElement);
         repeatElement.innerHTML = object.userData.col;
+        configurator_list.map((itemList) => {
+          console.log('itemList: ', itemList)
+          if(itemList[4] !== "Артикул" && itemList[4] === object.userData.articule) {
+            itemList[0]++
+          }
+        
+        })
       }
       else {
-
-        if(object.userData.col === undefined) {
+        
+        if(!object.userData.col) {
           toDataURL('assets/images/' + objectData.image, function (dataUrl) {
             configurator_list.push([1,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
               image: dataUrl,
               width: 100
             }]);
-  
+
           })
         }
         else {
-         
+
           toDataURL('assets/images/' + objectData.image, function (dataUrl) {
             configurator_list.push([ objectData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
               image: dataUrl,
               width: 100
             }]);
-  
+
           })
         }
-       
         configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       }
 
@@ -1354,15 +1362,23 @@ const deleteObject = function (objectuuId) {
             if (object.scene.uuid === children.userData.childrenUUid) {
              
               objectPool = objectPool.filter(item => item.scene.uuid !== children.scene.uuid);
-              repeatPool = repeatPool.filter((item) => item.userData.articule !== children.userData.articule);
+              
+              // repeatPool = repeatPool.filter((item) => item.userData.articule !== children.userData.articule);
+              repeatPool = repeatPool.map((itemList) => {
 
+                if(itemList[4] !== "Артикул") {
+                   repeatPool = repeatPool.filter((item) => item.userData.articule !== children.userData.articule);
+                   
+                }
+              })
               let modal_element = document.querySelector('.row[data-articule = "'+ (children.userData.articule +'"]'));
               
               if(modal_element) {
                 modal_element.remove(modal_element);
+                configurator_list = configurator_list.filter(element => element[4] !== children.userData.articule); 
               }
               
-              configurator_list = configurator_list.filter(element => element[1] !== children.scene.uuid); 
+             
               // console.log('modal_element',modal_element)
               scene.remove(children.scene)
             }
@@ -1372,11 +1388,11 @@ const deleteObject = function (objectuuId) {
             let row1 = document.querySelector('.row[data-uuid = "'+ (object.scene.uuid +'"]'));
             
             if(row1) {
+              configurator_list = configurator_list.filter(element => element[4] !== object.userData.articule);
               row1.remove(row1);
             }
            }
- 
-           
+
             repeatPool.map((item) => {
             
               if(object.userData.articule === item.userData.articule) {
@@ -1393,6 +1409,10 @@ const deleteObject = function (objectuuId) {
                       if(itemList[0] > 1) {
                         itemList[0] --;
                       }
+                      else {
+                        console.log('item.userData.articule',item.userData.articule)
+                        configurator_list = configurator_list.filter(element => element[4] !== item.userData.articule);
+                      }
                     })
                     
                     console.log('object.userData.col',object.userData.col);
@@ -1401,18 +1421,21 @@ const deleteObject = function (objectuuId) {
                 }
                 else {
                   console.log('egakgawegaihgaiwogawha')
-                  repeatPool = repeatPool.filter((repeatItem) => repeatItem.userData.articule !== item.userData.articule)
+                  repeatPool = repeatPool.filter((repeatItem) => repeatItem.userData.articule !== object.userData.articule)
                   let row = document.querySelector('.row[data-articule = "'+ (item.userData.articule +'"]'));
                   
                   if(row) {
                     row.remove(row);
+                    
                   }
                 }
               }
               else {
                 let row = document.querySelector('.row[data-articule = "'+ (object.userData.articule +'"]'));
+                
                 if(row) {
                   row.remove(row);
+                  configurator_list = configurator_list.filter(element => element[4] !== object.userData.articule);
                 }        
               }
             })
@@ -1531,7 +1554,7 @@ var docInfo = {
 }
 
 const createPdfconfigurator = () => {
-
+  console.log('createPdfConfig: ', configurator_list);
   const pdfItemList = configurator_list.map(item => {
     return [
       item[0], item[3], item[4], item[5],item[6]
