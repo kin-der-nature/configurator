@@ -845,7 +845,7 @@ const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
 let zang = records.objects.find(object => object.id === 14);
 let lastInsertObject;
-configurator_list.push(['#',1,1,'Название','Артикул','Описание','Изображение'])
+configurator_list.push(['Кол-во',1,1,'Название','Артикул','Описание','Изображение'])
 
 
 function onMouseMove(event) {
@@ -1501,9 +1501,9 @@ var docInfo = {
 
     {
       table: {
-        widths: [30, '*',70, 150,150],
+        widths: [50, '*',60, 150,150],
         body: [
-          ['#','Название','Артикул','Описание','Изображение'],
+         
         ],
         headerRows: 0
       }
@@ -1550,7 +1550,6 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.dataset.uuid = uuid;
   const el_col = document.createElement("div");
   el_col.classList = "col-md-1 d-flex";
-  el_col.textContent = "X";
 
   const repeat_el_col = document.createElement("p");
   repeat_el_col.classList ="element_col";
