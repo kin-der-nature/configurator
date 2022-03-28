@@ -832,6 +832,7 @@ let currentobject;
 let configurator = [];
 let configurator_list = [];
 let repeatPool= [];
+
 let object_status = true;
 let object_remove;
 let configurator_table = document.querySelector('.configurator-table')
@@ -844,7 +845,7 @@ const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
 let zang = records.objects.find(object => object.id === 14);
 let lastInsertObject;
-
+configurator_list.push(['#',1,'#','Название','Артикул','Описание','Изображение'])
 console.log('window.innerHeight',window.innerHeight)
 
 function onMouseMove(event) {
@@ -1510,7 +1511,7 @@ var docInfo = {
       table: {
         widths: [30, '*',70, 150,150],
         body: [
-          
+          ['#','Название','Артикул','Описание','Изображение'],
         ],
         headerRows: 0
       }
@@ -1537,7 +1538,7 @@ const createPdfconfigurator = () => {
     ]
 
   });
-
+  
   docInfo.content[1].table.body = pdfItemList;
 
   pdfMake.createPdf(docInfo).download('name.pdf');

@@ -153,3 +153,12 @@ html,body
 {
     
 }
+.modal-images
+{
+  width: 320px;
+}
+.col-modal-name
+{
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
