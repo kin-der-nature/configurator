@@ -1206,38 +1206,38 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         repeatElement.innerHTML = object.userData.col;
       }
       else {
+
+        if(object.userData.col === undefined) {
+          toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+            configurator_list.push([1,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
+              image: dataUrl,
+              width: 100
+            }]);
+  
+          })
+        }
+        else {
+         
+          toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+            configurator_list.push([ objectData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
+              image: dataUrl,
+              width: 100
+            }]);
+  
+          })
+        }
+       
         configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
       }
 
-      toDataURL('assets/images/' + objectData.image, function (dataUrl) {
-        
-
+     
+      // toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+      //   configurator_list.push([item.userData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
+      //     image: dataUrl,
+      //     width: 100
+      //   }]);
        
-        repeatPool.map((item) => {
-
-          console.log(' objectData.articule', objectData.articule)
-          if(item.userData.articule === objectData.articule) {
-          
-            if(object.userData.col > 1) {
-             
-            }
-            else {
-              configurator_list.push([item.userData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
-                image: dataUrl,
-                width: 100
-              }]);
-            }
-          }
-          else if(object.userData.col) {
-          
-           
-          }
-        
-        })
-      
-       
-
-      })
+      // })
       objectPool.push(object);
       console.log('repeatPool',repeatPool);
       
@@ -1385,6 +1385,14 @@ const deleteObject = function (objectuuId) {
 
                   if(repeatElement) {
                     item.userData.col -- ;
+
+                    configurator_list.map((itemList) =>{
+                      
+                      if(itemList[0] > 1) {
+                        itemList[0] --;
+                      }
+                    })
+                    
                     console.log('object.userData.col',object.userData.col);
                     repeatElement.innerHTML = item.userData.col;
                   }
