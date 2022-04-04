@@ -586,9 +586,21 @@ const records = {
       image: 'Медный_модуль.png',
       title: 'FL SFP GT-H',
       text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
+      errorRate: { x: 0, y: 6, z: -45 },
+      id: 13,
+      connector_type: 7,
+    },
+    {
+      modelName: 'Медный модуль.glb',
+      materialName: 'materials.mtl',
+      articule: '1207198',
+      dataUrl: '',
+      image: 'Медный_модуль.png',
+      title: 'FL SFP GT-H',
+      text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
       rotate:{x: 90,y: 50,z: 55},
       errorRate: { x: 0, y: -6, z: -45 },
-      id: 13,
+      id: 14,
       connector_type: 6,
     },
     {
@@ -600,7 +612,7 @@ const records = {
       title: 'FL SWITCH EP7400 -ABLK',
       text: 'Заглушка слотов коммутатора',
       errorRate: { x: 78, y: -10, z: 60 },
-      id: 14,
+      id: 15,
     },
     {
       modelName: 'Оптический модуль.glb',
@@ -610,18 +622,6 @@ const records = {
       image: 'Оптический модуль.png',
       title: 'FL SFP FX SM',
       text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
-      errorRate: { x: 2, y: 6, z: -38 },
-      id: 15,
-      connector_type: 4,
-    },
-    {
-      modelName: 'Оптический модуль.glb',
-      materialName: 'materials.mtl',
-      articule: '2891754',
-      dataUrl: '',
-      image: 'Оптический модуль.png',
-      title: 'FL SFP SX',
-      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 16,
       connector_type: 4,
@@ -629,13 +629,25 @@ const records = {
     {
       modelName: 'Оптический модуль.glb',
       materialName: 'materials.mtl',
+      articule: '2891754',
+      dataUrl: '',
+      image: 'Оптический модуль.png',
+      title: 'FL SFP SX',
+      text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
+      errorRate: { x: 2, y: 6, z: -38 },
+      id: 17,
+      connector_type: 4,
+    },
+    {
+      modelName: 'Оптический модуль.glb',
+      materialName: 'materials.mtl',
       articule: '2702397',
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX2',
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 17,
+      id: 18,
       connector_type: 4,
     },
     {
@@ -647,7 +659,7 @@ const records = {
       title: 'FL SFP LX',
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 18,
+      id: 19,
       connector_type: 4,
     },
     {
@@ -659,7 +671,7 @@ const records = {
       title: 'FL SFP LX10-B',
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 19,
+      id: 20,
       connector_type: 7,
     },
     {
@@ -671,7 +683,7 @@ const records = {
       title: 'FL SFP SX',
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 20,
+      id: 21,
       connector_type: 7,
     },
     {
@@ -683,7 +695,7 @@ const records = {
       title: 'FL SFP SX2',
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 21,
+      id: 22,
       connector_type: 7,
     },
     {
@@ -695,7 +707,7 @@ const records = {
       title: 'FL SFP LX',
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 22,
+      id: 23,
       connector_type: 7,
     },
     {
@@ -707,7 +719,7 @@ const records = {
       title: 'FL SFP LX10-B',
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
-      id: 23,
+      id: 24,
       connector_type: 4,
     },
     {
@@ -720,7 +732,7 @@ const records = {
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
-      id: 24,
+      id: 25,
       connector_type: 6,
     },
     {
@@ -733,9 +745,22 @@ const records = {
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
-      id: 15,
+      id: 26,
       connector_type: 6,
     },
+    // {
+    //   modelName: 'Оптический модуль.glb',
+    //   materialName: 'materials.mtl',
+    //   articule: '2891082',
+    //   dataUrl: '',
+    //   image: 'Оптический модуль.png',
+    //   title: 'FL SFP GT-H ',
+    //   rotate:{x: 90,y: 50,z: 55},
+    //   text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
+    //   errorRate: { x: -2, y: -6, z: -38 },
+    //   id: 25,
+    //   connector_type: 6,
+    // },
     {
       modelName: 'Оптический модуль.glb',
       materialName: 'materials.mtl',
@@ -746,7 +771,7 @@ const records = {
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
-      id: 25,
+      id: 27,
       connector_type: 6,
     },
     {
@@ -759,7 +784,7 @@ const records = {
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
       errorRate: { x: -2, y: -6, z: -38 },
-      id: 26,
+      id: 28,
       connector_type: 6,
     },
     {
@@ -772,7 +797,7 @@ const records = {
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
       errorRate: { x: -2, y: -6, z: -38 },
-      id: 27,
+      id: 29,
       connector_type: 6,
     },
     
@@ -843,7 +868,7 @@ const zeroPosition = new THREE.Vector3(0, 0, 0);
 
 const configurator_button_list = document.querySelector("#btn-sania");
 //onCLick stuff
-let zang = records.objects.find(object => object.id === 14);
+let zang = records.objects.find(object => object.id === 15);
 let lastInsertObject;
 configurator_list.push(['Кол-во',1,1,'Название','Артикул','Описание','Изображение'])
 
@@ -1501,7 +1526,7 @@ var docInfo = {
 
     {
       table: {
-        widths: [50, '*',60, 150,150],
+        widths: [150,150,'*', 50,150],
         body: [
          
         ],
@@ -1526,7 +1551,7 @@ const createPdfconfigurator = () => {
 
   const pdfItemList = configurator_list.map(item => {
     return [
-      item[0], item[3], item[4], item[5],item[6]
+      item[3], item[4], item[5], item[0],item[6]
     ]
 
   });
@@ -1540,7 +1565,7 @@ const createPdfconfigurator = () => {
 const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, image) => {
 
   const row = document.createElement("div");
-  row.classList = "row";
+  row.classList = "row d-flex align-items-center justify-content-start ";
   row.style.display = "flex";
   row.style.flexDirection = "row";
   row.style.flexWrap = "nowrap";
@@ -1575,11 +1600,11 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   el_title.textContent = title;
 
   const el_text = document.createElement("div");
-  el_text.classList = "col-md-3";
+  el_text.classList = "col-md-4";
   el_text.textContent = text;
   
   const el_articule = document.createElement("div");
-  el_articule.classList = "col-md-3";
+  el_articule.classList = "col-md-2";
   el_articule.textContent = articule;
   const el_block_img = document.createElement("div");
   el_block_img.classList = "col-md-2";
@@ -1603,12 +1628,12 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
     el_block_link.append(el_link);
   }
 
-  row.append(el_col);
   row.append(el_title);
   row.append(el_text);
   row.append(el_articule);
+  row.append(el_col);
   row.append(el_block_img);
-  row.append(el_block_link);
+  // row.append(el_block_link);
   el_col.append(repeat_el_col);
   
   return row;
