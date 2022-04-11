@@ -12,6 +12,7 @@ const records = {
       articule: '1144388',
       dataUrl: '',
       id: 2,
+      importance: 7,
       materialName: 'optica_materials.mtl',
       errorRate: { x: 29, y: -34, z: 50 },
       connector_type: 3,
@@ -57,6 +58,7 @@ const records = {
       materialName: 'materials.mtl',
       image: "EP7400-Chassis_Back_2.png",
       title: 'FL SWITCH EP7428R-L3F1',
+      importance: 1,
       position: { x: 0, y: 50, z: 0 },
       articule: '1144353',
       dataUrl: '',
@@ -147,6 +149,7 @@ const records = {
       text: 'Модуль 8 портов SFP (100/1000 Мб/с)',
       articule: '1144383',
       dataUrl: '',
+      importance: 6,
       id: 3,
       position: { x: 0, y: 0, z: 0 },
       errorRate: { x: 90, y: 8, z: 55 },
@@ -239,6 +242,7 @@ const records = {
       articule: '1144383',
       dataUrl: '',
       id: 4,
+      importance: 6,
       position: { x: 0, y: 0, z: 0 },
       errorRate: { x: -82, y: -10, z: 53 },
       rotate:{x: 90,y: 50,z: 55},
@@ -329,6 +333,7 @@ const records = {
       articule: '1144375',
       dataUrl: '',
       id: 5,
+      importance: 5,
       position: { x: 0, y: 0, z: 0 },
       errorRate: { x: 78, y: -10, z: 55 },
       // connectors: [     //шаг отступа портов 15
@@ -420,6 +425,7 @@ const records = {
       dataUrl: '',
       id: 6,
       position: { x: 0, y: 0, z: 0 },
+      importance: 5,
       rotate:{x: 90,y: 50,z: 55},
       errorRate: { x: -67, y: 8, z: 57 },
       // connectors: [     //шаг отступа портов 15
@@ -511,6 +517,7 @@ const records = {
       text: 'Модуль питания 110/220 ACD/VDC (85-264 VAC или 88-370 VDC)',
       errorRate: { x: 0, y: 0, z: 0 },
       position: { x: 0, y: 0, z: 0 },
+      importance:2,
       id: 7,
       connector_type: 2,
     },
@@ -519,6 +526,7 @@ const records = {
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
       title: 'FL SWITCH EP7400-PS-LV',
+      importance: 4,
       articule: '1144367',
       dataUrl: '',
       text: 'Модуль питания 24 VDC (10-36 VDC)',
@@ -532,6 +540,7 @@ const records = {
       materialName: 'materials.mtl',
       image: '1144367_1031-0002-A01-iMX350_PS_MV_LV-ASSY_1.png',
       title: 'FL SWITCH EP7400-PS-MV',
+      importance: 3,
       articule: '1144372',
       dataUrl: '',
       text: 'Модуль питания 48 VDC (36-72 VDC)',
@@ -547,6 +556,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP FX',
+      importance: 9,
       text: 'Оптический многомодовый SFP модуль 100 Мб/с (100BASE-FX, 2 км, 1300/1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 10,
@@ -560,6 +570,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP FX',
+      importance: 9,
       text: 'Оптический многомодовый SFP модуль 100 Мб/с (100BASE-FX, 2 км, 1300/1310 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
       id: 11,
@@ -573,6 +584,7 @@ const records = {
       dataUrl: '',
       image: 'Медный_модуль.png',
       title: 'FL SFP GT-H',
+      importance: 11,
       text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
       errorRate: { x: 0, y: 6, z: -45 },
       id: 12,
@@ -585,6 +597,7 @@ const records = {
       dataUrl: '',
       image: 'Медный_модуль.png',
       title: 'FL SFP GT-H',
+      importance: 11,
       text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
       errorRate: { x: 0, y: 6, z: -45 },
       id: 13,
@@ -597,6 +610,7 @@ const records = {
       dataUrl: '',
       image: 'Медный_модуль.png',
       title: 'FL SFP GT-H',
+      importance: 11,
       text: 'Медный SFP модуль RJ45 (100 м, 100/1000 Мб/с)',
       rotate:{x: 90,y: 50,z: 55},
       errorRate: { x: 0, y: -6, z: -45 },
@@ -610,6 +624,7 @@ const records = {
       dataUrl: '',
       image: 'Заглушка.png',
       title: 'FL SWITCH EP7400 -ABLK',
+      importance: 8,
       text: 'Заглушка слотов коммутатора',
       errorRate: { x: 78, y: -10, z: 60 },
       id: 15,
@@ -621,6 +636,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP FX SM',
+      importance: 10,
       text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 16,
@@ -633,6 +649,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX',
+      importance: 12,
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 17,
@@ -645,6 +662,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX2',
+      importance: 13,
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 18,
@@ -657,6 +675,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP LX',
+      importance:6,
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 19,
@@ -669,6 +688,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP LX10-B',
+      importance: 14,
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 20,
@@ -681,6 +701,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX',
+      importance: 12,
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 21,
@@ -693,6 +714,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX2',
+      importance: 13,
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 22,
@@ -705,6 +727,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP LX',
+      importance: 15,
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 23,
@@ -717,6 +740,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP LX10-B',
+      importance: 14,
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
       errorRate: { x: 2, y: 6, z: -38 },
       id: 24,
@@ -729,6 +753,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP LX10-B',
+      importance: 14,
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 10 км, 1310 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
@@ -742,6 +767,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP FX SM',
+      importance: 10,
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический одномодовый SFP модуль 100 Мб/с (100BASE-FX, 40 км, 1300/1310 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
@@ -768,6 +794,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX',
+      importance: 12,
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 1 км, 850 нм)',
       errorRate: { x: -2, y: -6, z: -38 },
@@ -781,6 +808,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP SX2',
+      importance: 13,
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический многомодовый SFP модуль 1 Гб/с (1000BASE-SX, 2 км, 1310 нм) ',
       errorRate: { x: -2, y: -6, z: -38 },
@@ -794,6 +822,7 @@ const records = {
       dataUrl: '',
       image: 'Оптический модуль.png',
       title: 'FL SFP LX',
+      importance: 15,
       rotate:{x: 90,y: 50,z: 55},
       text: 'Оптический одномодовый SFP модуль 1 Гб/с (1000BASE-LX, 30 км, 1310 нм) ',
       errorRate: { x: -2, y: -6, z: -38 },
@@ -872,7 +901,6 @@ let zang = records.objects.find(object => object.id === 15);
 let lastInsertObject;
 configurator_list.push(['Кол-во',1,1,'Название','Артикул','Описание','Изображение'])
 
-
 function onMouseMove(event) {
   let canvasPosition = canvas.getBoundingClientRect();
   mouse.x = ((event.clientX - canvasPosition.x) / canvasPosition.width) * 2 - 1;
@@ -947,10 +975,12 @@ function onclick(event) {
     let availableObjects = records.objects.filter(object => object.connector_type === intersects[0].object.userData.type);
     setCurrentConnector(intersects[0]);
     currentConnector = intersects[0];
+    
     objectOpacity(currentConnector.object, 0.5);
     object_status = true;
+    configurator_button_list.disabled = true;
     if (availableObjects.length > 0) {
-
+      
       model_return.innerHTML = '';
       availableObjects.forEach(record => {
 
@@ -1102,7 +1132,6 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
     objLoader.load(objectData.modelName, function (object) {
       let modelObject = currentConnector.object;
       scene.add(object.scene);
-     
       object.scene.position.copy(position);
       objectData.position = object.scene.children[0].children[0].position;
       objectData.uuid = object.scene.uuid;
@@ -1156,6 +1185,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         object.userData.errorRate = objectData.errorRate;
         object.userData.connectorLevel = objectData.connectorLevel;
         object.userData.col = objectData.col;
+      
         object.userData.rotate = objectData.rotate;
         // new THREE.Box3().setFromObject( object.scene.children[0].children[0] ).getCenter( object.scene.children[0].children[0].position ).multiplyScalar( - 1 );
         object.scene.position.add(getCenterPointX(object.scene, object.userData.errorRate));
@@ -1192,8 +1222,10 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
           object.userData.connector_type = currentConnector.object.userData.connector_type;
           object.userData.col = objectData.col;
+          object.userData.importance = objectData.importance;
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
+           configurator_button_list.disabled = false;
         }
       }
       
@@ -1263,7 +1295,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
        
       // })
       objectPool.push(object);
-     
+      objectPoolSort(objectPool);
       if (objectData.connectors) {
         objectData.connectors.map(connector => createArea(connector, object, objectData.id));
       }
@@ -1278,6 +1310,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 };
 
 main();
+
 
 function getCenterPoint(mesh) {
 
@@ -1322,6 +1355,19 @@ const addPlug = (plug) => {
 
   })
 
+}
+
+const objectPoolSort = (objectSort) => {
+  console.log('objectPool',objectSort)
+  // console.log('objectSort',objectSort.sort((a, b) => a.userData.importance > b.userData.importance ? 1 : -1));
+
+  objectSort.sort((prev, next) => {
+    if ( prev.userData.importance < next.userData.importance ) return -1;
+    if ( prev.userData.importance < next.userData.importance ) return 1;
+});
+
+console.log('objectSort weafgwaeg',objectSort)
+  
 }
 
 const setDetail = (detail) => {
