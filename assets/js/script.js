@@ -889,7 +889,11 @@ let repeatPool= [];
 
 let object_status = true;
 let object_remove;
-let configurator_table = document.querySelector('.configurator-table')
+let objectDataSort = [{
+  id:null,
+  articule:null,
+}];
+let configurator_table = document.querySelector('.configurator-table-content')
 let positionGreenX = document.querySelector('.positionX');
 // const camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, far);
 camera.position.set(0, 0.05, 400);
@@ -1140,7 +1144,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
       configurator.push(objectData);
       let repeat_col = 1;
      
-
+      console.log('objectData', objectData)
       configurator.push(objectData);
 
       if (configurator.length > 1) {
@@ -1171,6 +1175,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
 
       
 
+        
         // if (objectData)
         // object.userData = {
         //   connectorId: currentConnector.object.userData.id,
@@ -1222,22 +1227,25 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.childrenUUid = currentConnector.object.userData.parentUuid;
           object.userData.connector_type = currentConnector.object.userData.connector_type;
           object.userData.col = objectData.col;
+          object.userData.title = objectData.title;
+          object.userData.text = objectData.text;
+          object.userData.image = objectData.image;
           object.userData.importance = objectData.importance;
           connectorPool = connectorPool.filter(connector => connector.uuid !== currentConnector.object.uuid);
           lastInsertObject = object;
-           configurator_button_list.disabled = false;
+          configurator_button_list.disabled = false;
         }
       }
       
       if(objectPool.length > 1) {
 
         objectPool.map((element) => {
-
+          
           if(element.userData.articule === object.userData.articule) {
             repeatPool = repeatPool.filter((item) => item.userData.articule !== object.userData.articule);
             repeatPool.push(object);
             object.userData.col++;
-         
+                 
           }
         });
       }
@@ -1248,16 +1256,19 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
           object.userData.col = item.userData.col;
           objectData.col = item.userData.col;
         }
+
       })
      
-      
       if(objectData.col > 1) {
         let repeatElement = document.querySelector('.element_col[data-articule = "'+ (object.userData.articule +'"]'));
         repeatElement.innerHTML = object.userData.col;
+        
+        
         configurator_list.map((itemList) => {
 
           if(itemList[4] !== "Артикул" && itemList[4] === object.userData.articule) {
             itemList[0]++
+            
           }
         
         })
@@ -1271,22 +1282,60 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
               width: 100
             }]);
 
-          })
+})
+          
         }
         else {
 
           toDataURL('assets/images/' + objectData.image, function (dataUrl) {
-            configurator_list.push([ objectData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
+            configurator_list.push([objectData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
               image: dataUrl,
               width: 100
             }]);
 
           })
         }
-        configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, object.userData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
-      }
+      
+      
+      // objectDataSort.push({
+      //   id:  objectData.id,
+      //   uuid: objectData.uuid,
+      //   childrenUUid: object.userData.childrenUUid,
+      //   title: objectData.title,
+      //   articule: objectData.articule,
+      //   text:objectData.text,
+      //   image:objectData.image,
+      //   col: objectData.col,
+      //   importance: objectData.importance
 
+      // })
      
+      // objectPoolSort(objectDataSort);
+
+      configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, objectData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
+      // const modalElement = document.querySelector('.modal-element');
+      // let sortedElms = Array.prototype.slice.call(modalElement).sort(function(a, b) { 
+      //   return a.dataset.articule > b.dataset.articule
+      // });
+      // console.log('sortedElms',sortedElms)
+      // for (var i = 0; i < sortedElms.length; i++) {
+      //   configurator_table.appendChild(sortedElms[i]);
+      // }
+      var categoryItems = document.querySelectorAll("[data-id]");
+      var categoryItemsArray = Array.from(categoryItems);
+
+      let sorted = categoryItemsArray.sort(sorter);
+
+      function sorter(a,b) {
+          if(a.dataset.id < b.dataset.id) return -1;
+          if(a.dataset.id > b.dataset.id) return 1;
+          return 0;
+      }
+      sorted.forEach(e => document.querySelector(".configurator_table").appendChild(e));
+      }
+    
+  
+      
       // toDataURL('assets/images/' + objectData.image, function (dataUrl) {
       //   configurator_list.push([item.userData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
       //     image: dataUrl,
@@ -1295,7 +1344,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
        
       // })
       objectPool.push(object);
-      objectPoolSort(objectPool);
+     
       if (objectData.connectors) {
         objectData.connectors.map(connector => createArea(connector, object, objectData.id));
       }
@@ -1358,16 +1407,21 @@ const addPlug = (plug) => {
 }
 
 const objectPoolSort = (objectSort) => {
-  console.log('objectPool',objectSort)
-  // console.log('objectSort',objectSort.sort((a, b) => a.userData.importance > b.userData.importance ? 1 : -1));
 
+  configurator_table.innerHTML = "";
   objectSort.sort((prev, next) => {
-    if ( prev.userData.importance < next.userData.importance ) return -1;
-    if ( prev.userData.importance < next.userData.importance ) return 1;
-});
-
-console.log('objectSort weafgwaeg',objectSort)
+    if ( prev.importance < next.importance ) return -1;
+    if ( prev.importance < next.importance ) return 1;
+  });
   
+  
+  objectSort.map((objectData) => {
+    
+    configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, objectData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
+  })
+
+  
+  console.log('objectSort',objectSort)
 }
 
 const setDetail = (detail) => {
@@ -1415,6 +1469,7 @@ const deleteObject = function (objectuuId) {
               objectPool = objectPool.filter(item => item.scene.uuid !== children.scene.uuid);
               
               repeatPool = repeatPool.filter((item) => item.userData.articule !== children.userData.articule);
+              objectDataSort = objectDataSort.filter((item) => item.articule !== children.userData.articule)
               // repeatPool = repeatPool.map((itemList) => {
                 
               // if(itemList[4] !== "Артикул") {
@@ -1487,12 +1542,14 @@ const deleteObject = function (objectuuId) {
 
           let connectorPoolDelete = connectorPool.filter(item => item.userData.parentUuid === object.scene.uuid);
           connectorPoolDelete = connectorPoolDelete.map((item) => {
-            connectorPool = connectorPool.filter(element => element !== item);
+          connectorPool = connectorPool.filter(element => element !== item);
             // connectorPool = connectorPool.filter(element => element.scene.uuid !==item.userData.childrenUuid)
             scene.remove(item);
           });
           
+
           objectPool = objectPool.filter(item => item.scene.uuid !== object.scene.uuid);
+          
           configurator_list = configurator_list.filter(element => element[1] !== object.scene.uuid);
 
           scene.remove(object.scene);
@@ -1611,7 +1668,7 @@ const createPdfconfigurator = () => {
 const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, image) => {
 
   const row = document.createElement("div");
-  row.classList = "row d-flex align-items-center justify-content-start ";
+  row.classList = "row d-flex align-items-center justify-content-start modal-element";
   row.style.display = "flex";
   row.style.flexDirection = "row";
   row.style.flexWrap = "nowrap";
@@ -1619,6 +1676,7 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.dataset.childrenuuid = childrenUUid;
   row.dataset.articule =articule;
   row.dataset.uuid = uuid;
+  row.dataset.id = id;
   const el_col = document.createElement("div");
   el_col.classList = "col-md-1 d-flex";
 
@@ -1681,7 +1739,7 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.append(el_block_img);
   // row.append(el_block_link);
   el_col.append(repeat_el_col);
-  
+
   return row;
 }
 
