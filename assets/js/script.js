@@ -889,10 +889,7 @@ let repeatPool= [];
 
 let object_status = true;
 let object_remove;
-let objectDataSort = [{
-  id:null,
-  articule:null,
-}];
+let objectDataSort = [];
 let configurator_table = document.querySelector('.configurator-table-content')
 let positionGreenX = document.querySelector('.positionX');
 // const camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, far);
@@ -961,8 +958,6 @@ const setCurrentConnector = (newCurrentConnector) => {
   
 }
 
-
-
 //TODO transfer
 function getParent(findedObject){
     return findedObject.type === 'Scene' ? findedObject : getParent(findedObject.parent);
@@ -983,15 +978,15 @@ function onclick(event) {
     objectOpacity(currentConnector.object, 0.5);
     object_status = true;
     configurator_button_list.disabled = true;
+
     if (availableObjects.length > 0) {
-      
       model_return.innerHTML = '';
       availableObjects.forEach(record => {
 
         model_return.innerHTML += detailCard(record.id, record.title, record.text, record.image);
         objectOpacity(currentConnector.object, 0.5);
       });
-    } 
+    }
   }
   
 }
@@ -1245,7 +1240,7 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
             repeatPool = repeatPool.filter((item) => item.userData.articule !== object.userData.articule);
             repeatPool.push(object);
             object.userData.col++;
-                 
+            
           }
         });
       }
@@ -1263,6 +1258,12 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         let repeatElement = document.querySelector('.element_col[data-articule = "'+ (object.userData.articule +'"]'));
         repeatElement.innerHTML = object.userData.col;
         
+        objectDataSort.map((item) => {
+
+          if(item.articule === object.userData.articule) {
+            item.col ++;
+          }
+        })
         
         configurator_list.map((itemList) => {
 
@@ -1274,75 +1275,24 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
         })
       }
       else {
-        
-        if(!object.userData.col) {
-          toDataURL('assets/images/' + objectData.image, function (dataUrl) {
-            configurator_list.push([1,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
-              image: dataUrl,
-              width: 100
-            }]);
+        objectDataSort.push({
+          id:  objectData.id,
+          uuid: objectData.uuid,
+          childrenUUid: object.userData.childrenUUid,
+          title: objectData.title,
+          articule: objectData.articule,
+          text:objectData.text,
+          image:objectData.image,
+          col: objectData.col,
+          importance: objectData.importance
 
-})
-          
-        }
-        else {
-
-          toDataURL('assets/images/' + objectData.image, function (dataUrl) {
-            configurator_list.push([objectData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
-              image: dataUrl,
-              width: 100
-            }]);
-
-          })
-        }
-      
-      
-      // objectDataSort.push({
-      //   id:  objectData.id,
-      //   uuid: objectData.uuid,
-      //   childrenUUid: object.userData.childrenUUid,
-      //   title: objectData.title,
-      //   articule: objectData.articule,
-      //   text:objectData.text,
-      //   image:objectData.image,
-      //   col: objectData.col,
-      //   importance: objectData.importance
-
-      // })
-     
-      // objectPoolSort(objectDataSort);
-
-      configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, objectData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
-      // const modalElement = document.querySelector('.modal-element');
-      // let sortedElms = Array.prototype.slice.call(modalElement).sort(function(a, b) { 
-      //   return a.dataset.articule > b.dataset.articule
-      // });
-      // console.log('sortedElms',sortedElms)
-      // for (var i = 0; i < sortedElms.length; i++) {
-      //   configurator_table.appendChild(sortedElms[i]);
-      // }
-      var categoryItems = document.querySelectorAll("[data-id]");
-      var categoryItemsArray = Array.from(categoryItems);
-
-      let sorted = categoryItemsArray.sort(sorter);
-
-      function sorter(a,b) {
-          if(a.dataset.id < b.dataset.id) return -1;
-          if(a.dataset.id > b.dataset.id) return 1;
-          return 0;
-      }
-      sorted.forEach(e => document.querySelector(".configurator_table").appendChild(e));
+        })
+        configurator_list = objectPoolSort(objectDataSort);
       }
     
   
       
-      // toDataURL('assets/images/' + objectData.image, function (dataUrl) {
-      //   configurator_list.push([item.userData.col,objectData.id,object.scene.uuid, objectData.title, objectData.articule, objectData.text, {
-      //     image: dataUrl,
-      //     width: 100
-      //   }]);
-       
-      // })
+
       objectPool.push(object);
      
       if (objectData.connectors) {
@@ -1407,27 +1357,30 @@ const addPlug = (plug) => {
 }
 
 const objectPoolSort = (objectSort) => {
-
   configurator_table.innerHTML = "";
   objectSort.sort((prev, next) => {
     if ( prev.importance < next.importance ) return -1;
     if ( prev.importance < next.importance ) return 1;
   });
-  
+  temp = [['Кол-во',1,1,'Название','Артикул','Описание','Изображение']];
   
   objectSort.map((objectData) => {
-    
     configurator_table.append(modal_configurator(objectData.col,objectData.id, objectData.uuid, objectData.childrenUUid, objectData.title, objectData.articule, objectData.text, objectData.image));
-  })
 
-  
-  console.log('objectSort',objectSort)
+    toDataURL('assets/images/' + objectData.image, function (dataUrl) {
+      temp.push([objectData.col,objectData.id,objectData.uuid, objectData.title, objectData.articule, objectData.text, {
+        image: dataUrl,
+        width: 100
+      }, objectData.importance]);
+    });
+  });
+
+  return temp;
 }
 
 const setDetail = (detail) => {
 
   if (currentConnector.object) {
-    
     instantiateObject(detail, currentConnector.object.position);
     scene.remove(currentConnector.object);
   }
@@ -1495,6 +1448,18 @@ const deleteObject = function (objectuuId) {
               row1.remove(row1);
             }
            }
+            objectDataSort.map((item) => {
+              
+              if(item.articule === object.userData.articule) {
+                
+                if(item.col > 1) {
+                  item.col--
+                }
+                else {
+                  objectDataSort = objectDataSort.filter((itemFilter) => itemFilter.articule !== object.userData.articule)
+                }
+              }
+            })
 
             repeatPool.map((item) => {
             
@@ -1503,7 +1468,7 @@ const deleteObject = function (objectuuId) {
                 if(item.userData.col > 1) {
   
                   let repeatElement = document.querySelector('.element_col[data-articule = "'+ (item.userData.articule +'"]'));
-
+                  
                   if(repeatElement) {
                     item.userData.col -- ;
 
@@ -1536,7 +1501,7 @@ const deleteObject = function (objectuuId) {
                 if(row) {
                   row.remove(row);
                   configurator_list = configurator_list.filter(element => element[4] !== object.userData.articule);
-                }        
+                }
               }
             })
 
@@ -1567,15 +1532,13 @@ const deleteObject = function (objectuuId) {
 const replaceArea = (event) => {
 
   object = records.objects.find(item => item.id == event.target.dataset.modelId);
-  
+
   if (object_status) {
     object_status = false;
     loader.style.display ='flex';
 
-    if (object) {  
+    if (object) {
       setDetail(object);
-    } else {
-
     }
   }
 }
@@ -1630,9 +1593,7 @@ var docInfo = {
     {
       table: {
         widths: [150,150,'*', 50,150],
-        body: [
-         
-        ],
+        body: [],
         headerRows: 0
       }
     },
@@ -1651,16 +1612,14 @@ var docInfo = {
 }
 
 const createPdfconfigurator = () => {
-
-  const pdfItemList = configurator_list.map(item => {
-    return [
-      item[3], item[4], item[5], item[0],item[6]
-    ]
-
+  //TODO refactor
+  configurator_list.sort((prev, next) => {
+    if ( prev[7] < next[7] ) return -1;
+    if ( prev[7] < next[7] ) return 1;
   });
-  
-  docInfo.content[1].table.body = pdfItemList;
 
+  const pdfItemList = configurator_list.map(item => [item[3], item[4], item[5], item[0],item[6]]);
+  docInfo.content[1].table.body = pdfItemList;
   pdfMake.createPdf(docInfo).download('name.pdf');
 
 }
