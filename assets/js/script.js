@@ -886,7 +886,7 @@ let currentobject;
 let configurator = [];
 let configurator_list = [];
 let repeatPool= [];
-
+let path = '/assets/model/'
 let object_status = true;
 let object_remove;
 let objectDataSort = [];
@@ -1121,14 +1121,14 @@ const instantiateObject = (objectData, position = new THREE.Vector3(0, 0, 0), re
   const mtlLoader = new THREE.MTLLoader();
   const dracoLoader = new THREE.DRACOLoader();
   dracoLoader.setPath('draco/gltf/');
-  mtlLoader.load(objectData.materialName, function (materials) {
+  mtlLoader.load(path + objectData.materialName, function (materials) {
     materials.preload();
 
     var objLoader = new THREE.GLTFLoader();
     // objLoader.setMaterials( materials );
     objLoader.setDRACOLoader(dracoLoader);
 
-    objLoader.load(objectData.modelName, function (object) {
+    objLoader.load(path + objectData.modelName, function (object) {
       let modelObject = currentConnector.object;
       scene.add(object.scene);
       object.scene.position.copy(position);
@@ -1434,7 +1434,7 @@ const deleteObject = function (objectuuId) {
               
               if(modal_element) {
                 modal_element.remove(modal_element);
-                configurator_list = configurator_list.filter(element => element[4] !== children.userData.articule); 
+              
               }
               scene.remove(children.scene)
             }
@@ -1444,7 +1444,7 @@ const deleteObject = function (objectuuId) {
             let row1 = document.querySelector('.row[data-uuid = "'+ (object.scene.uuid +'"]'));
             
             if(row1) {
-              configurator_list = configurator_list.filter(element => element[4] !== object.userData.articule);
+           
               row1.remove(row1);
             }
            }
@@ -1474,11 +1474,11 @@ const deleteObject = function (objectuuId) {
 
                     configurator_list.map((itemList) =>{
                       
-                      if(itemList[0] > 1) {
+                      if(itemList[0] >= 1) {
                         itemList[0] --;
                       }
                       else {
-                        configurator_list = configurator_list.filter(element => element[4] !== item.userData.articule);
+                       
                       }
                     })
                     
@@ -1488,7 +1488,7 @@ const deleteObject = function (objectuuId) {
                 else {
                   repeatPool = repeatPool.filter((repeatItem) => repeatItem.userData.articule !== object.userData.articule)
                   let row = document.querySelector('.row[data-articule = "'+ (item.userData.articule +'"]'));
-                  
+                  configurator_list = configurator_list.filter(element => element[4] !== item.userData.articule);
                   if(row) {
                     row.remove(row);
                     
@@ -1497,10 +1497,10 @@ const deleteObject = function (objectuuId) {
               }
               else {
                 let row = document.querySelector('.row[data-articule = "'+ (object.userData.articule +'"]'));
-                
+              
                 if(row) {
                   row.remove(row);
-                  configurator_list = configurator_list.filter(element => element[4] !== object.userData.articule);
+                 
                 }
               }
             })
