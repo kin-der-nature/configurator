@@ -1423,13 +1423,6 @@ const deleteObject = function (objectuuId) {
               
               repeatPool = repeatPool.filter((item) => item.userData.articule !== children.userData.articule);
               objectDataSort = objectDataSort.filter((item) => item.articule !== children.userData.articule)
-              // repeatPool = repeatPool.map((itemList) => {
-                
-              // if(itemList[4] !== "Артикул") {
-              //      repeatPool = repeatPool.filter((item) => item.userData.articule !== children.userData.articule);
-                   
-              //   }
-              // })
               let modal_element = document.querySelector('.row[data-articule = "'+ (children.userData.articule +'"]'));
               
               if(modal_element) {
