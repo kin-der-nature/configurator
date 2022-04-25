@@ -10,6 +10,20 @@
     <title>Спецификация коммутатора FL SWITCH EP7428R-L3F1</title>
 </head>
 <body>
+  <input type="text" id="myInput" >
+  <button onclick="reverseString()">submit</button>
+  
+    <script>
+  
+    function reverseString() {
+     var str = document.getElementById("myInput").value;
+      var splitString = str.split("");
+      var reverseArray = splitString.reverse();
+       var joinArray = reverseArray.join("");
+       window.parent.postMessage(joinArray, "http://phoenixcontactpro/configurators/product-configurators/konfigurator-test.php" )
+     }
+    </script>
+  
     <section class="configurator-section">
         <canvas id="canvas" ></canvas>
         <div class="loader-section">
@@ -73,7 +87,7 @@
                   </div>
                 </div>
               </div>
-              <img src="" alt="">
+              
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" onclick="createPdfconfigurator()">СФОРМИРОВАТЬ PDF</button>
               <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -83,7 +97,9 @@
           </div>
         </div>
       </div>
-
+    <script>
+  
+    </script>
     <script src='https://unpkg.com/three@0.99.0/build/three.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src='https://unpkg.com/three@0.99.0/examples/js/loaders/GLTFLoader.js'></script>

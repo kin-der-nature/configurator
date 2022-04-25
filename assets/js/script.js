@@ -1614,8 +1614,15 @@ const createPdfconfigurator = () => {
   const pdfItemList = configurator_list.map(item => [item[3], item[4], item[5], item[0],item[6]]);
   docInfo.content[1].table.body = pdfItemList;
   pdfMake.createPdf(docInfo).download('name.pdf');
-
+  let pdfObject = {name:"pdfList", pdfItemList}
+  let pdfObjectList = JSON.parse(JSON.stringify(pdfObject));
+  window.parent.postMessage(
+  pdfObjectList, 
+  "http://phoenixcontactpro/configurators/product-configurators/konfigurator-test.php" )
 }
+
+
+// window.parent.postMessage(JSON.stringify({key: 'value'}), '');
 
 const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, image) => {
 
@@ -1626,7 +1633,7 @@ const modal_configurator = (col,id, uuid, childrenUUid, title, articule, text, i
   row.style.flexWrap = "nowrap";
   row.style.justifyContent = "space-between";
   row.dataset.childrenuuid = childrenUUid;
-  row.dataset.articule =articule;
+  row.dataset.articule = articule;
   row.dataset.uuid = uuid;
   row.dataset.id = id;
   const el_col = document.createElement("div");
