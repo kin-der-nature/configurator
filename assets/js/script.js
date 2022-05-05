@@ -1725,12 +1725,23 @@ const downloadPdfConfigurator = () => {
 const sendData = () => {
   createPdfconfigurator();
   pdfMake.createPdf(docInfo).getBuffer(function (buffer) {
-    var blob = new Blob([buffer]);
+    let blob = new Blob([buffer]);
 
-    var reader = new FileReader();
+    let reader = new FileReader();
     // this function is triggered once a call to readAsDataURL returns
     reader.onload = function (event) {
-      let testSend = {test:event.target.result};
+      let name = document.querySelector('.configurator-name');
+      let companyName = document.querySelector('.configurator-company-name');
+      let number = document.querySelector('.configurator-number');
+      let email = document.querySelector('.configurator-email');
+      let testSend = {
+        test: event.target.result, orders: {
+          name: name.value,
+          companyName: companyName.value,
+          telephone: number.value,
+          email: email.value
+        }
+      };
       window.parent.postMessage(
         testSend,
         "http://phoenixcontactpro/configurators/product-configurators/konfigurator-test.php"
